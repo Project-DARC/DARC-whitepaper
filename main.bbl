@@ -1,0 +1,7 @@
+\begin{thebibliography}{Ope}
+
+\bibitem[Ope]{proxy}
+``Proxy Upgrade Pattern'', OpenZeppelin Docs,
+  https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies.
+
+\end{thebibliography}

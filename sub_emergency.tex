@@ -1,0 +1,25 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\section{Emergency Agent}
+
+In the DARC protocol, users frequently encounter various issues, such as:
+
+\begin{enumerate}
+    \item Setting incorrect plugin parameters, triggering conditions, or performing erroneous token operations, rendering recovery impossible.
+    \item Locking certain critical operations in the DARC protocol, resulting in the permanent unavailability of functionalities within the protocol.
+    \item Human disputes leading to the organization's inability to operate, which cannot be resolved through plugins but may be addressed through manual litigation using documents, texts, evidence, etc.
+    \item Identifying vulnerabilities or facing attacks in the DARC protocol, necessitating an urgent pause and recovery of the protocol.
+    \item Addressing other potential technical issues or disputes that may arise.
+\end{enumerate}
+
+In the DARC protocol, users can designate one or more emergency agents for emergency situations. In the event of unforeseen circumstances, users can invite emergency agents to intervene. An emergency agent functions as a super administrator with the authority to execute any operation within the DARC protocol without being subject to any limitations imposed by plugins. This role is crucial for addressing urgent or unresolved issues within the DARC protocol.
+
+\begin{enumerate}
+    \item \texttt{addEmergency(emergencyAgentAddress)}: This command is used to add an emergency agent by providing the address of the emergency agent. Once added, the emergency agent gains superadmin privileges, allowing them to execute any operation in the DARC protocol without being restricted by plugins.
+
+    \item \texttt{callEmergency(emergencyAgentAddress)}: This command is employed to invoke an emergency agent by specifying the address of the emergency agent to be called. Upon invocation, the emergency agent can take necessary emergency measures to address unforeseen situations and perform operations to ensure the normal functioning of the DARC.
+
+    \item \texttt{endEmergency()}: This command is utilized to conclude the emergency state. Once the emergency situation is resolved or addressed, users can use this command to end the emergency state and restore normal DARC protocol operations.
+\end{enumerate}
+
+\end{document}

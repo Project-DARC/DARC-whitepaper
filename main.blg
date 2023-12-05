@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: alpha.bst
+Database file #1: sample.bib
+Warning--I didn't find a database entry for "dao_paper"
+You've used 1 entry,
+            2543 wiz_defined-function locations,
+            562 strings with 4563 characters,
+and the built_in function-call counts, 219 in all, are:
+= -- 17
+> -- 1
+< -- 0
++ -- 0
+- -- 0
+* -- 11
+:= -- 30
+add.period$ -- 1
+call.type$ -- 1
+change.case$ -- 4
+chr.to.int$ -- 1
+cite$ -- 1
+duplicate$ -- 10
+empty$ -- 28
+format.name$ -- 0
+if$ -- 48
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 6
+num.names$ -- 0
+pop$ -- 13
+preamble$ -- 1
+purify$ -- 6
+quote$ -- 0
+skip$ -- 11
+stack$ -- 0
+substring$ -- 7
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 1
+top$ -- 0
+type$ -- 8
+warning$ -- 0
+while$ -- 0
+width$ -- 2
+write$ -- 9
+(There was 1 warning)

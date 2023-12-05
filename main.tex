@@ -1,0 +1,78 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{tikz-qtree}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,bending,positioning}
+\usepackage{listings}
+\usepackage{subfiles}
+
+\title{DARC: Decentralized Autonomous Regulated Corporation}
+\author{Xinran Wang}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In this paper, we propose a full-stack Decentralized Autonomous Regulated Corporation (DARC) - a virtual machine that enables users to manually configure the rules and regulations for the organization using a plugin system. This allows users to create and generate a company-like Decentralized Autonomous Organization (DAO) in the form of a smart contract on the blockchain. The organization's "by-laws" are defined by a set of plugins, and these contracts are developed and deployed to a Decision Machine - a virtual machine smart contract that executes the governance operations of the DAO with restrictions imposed by the plugins. DARC also facilitates the setup of multi-class token systems with different voting and dividend weights for token owners. It enables operations to periodically pay dividends to token owners based on predefined time periods or specific transactions. In essence, DARC's design aims to emulate a real company and can be deployed and executed as such.
+\end{abstract}
+
+\section{Introduction}
+
+Your introduction goes here! Simply start writing your document and use the Recompile button to view the updated PDF preview. Examples of commonly used commands and features are listed below, to help you get started.
+
+Once you're familiar with the editor, you can find various project settings in the Overleaf menu, accessed via the button in the very top left of the editor. To view tutorials, user guides, and further documentation, please visit our \href{https://www.overleaf.com/learn}{help library}, or head to our plans page to \href{https://www.overleaf.com/user/subscription/plans}{choose your plan}.
+
+
+\subfile{sub_principles}
+
+
+\subfile{sub_architecture}
+
+
+\subfile{sub_bylawscript}
+
+
+
+
+
+\subfile{sub_multi_token_system}
+
+\subfile{sub_plugins}
+
+
+
+
+
+\subfile{sub_voting}
+
+\subfile{sub_memberships}
+
+\subfile{sub_dividends}
+
+\subfile{sub_emergency}
+
+\subfile{sub_upgradablity}
+
+
+
+
+
+\bibliographystyle{alpha}
+\bibliography{sample}
+
+
+\end{document}
