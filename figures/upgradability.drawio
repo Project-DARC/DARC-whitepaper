@@ -1,0 +1,164 @@
+<mxfile host="app.diagrams.net" modified="2023-12-01T21:35:08.654Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="jr-3alB6lgoT8TT1WZWV" version="22.1.5" type="device">
+  <diagram name="Page-1" id="pW2yqLpZ8H5cy2Zz4gab">
+    <mxGraphModel dx="2618" dy="1515" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xfDnAwwiv2tREo297iEu-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="xfDnAwwiv2tREo297iEu-26" target="xfDnAwwiv2tREo297iEu-101" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-26" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="330" width="620" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xfDnAwwiv2tREo297iEu-25" target="xfDnAwwiv2tREo297iEu-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-25" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="70" width="620" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-6" value="My DARC 1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="80" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-7" value="upgrade_address = 0x0000..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="160" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-22" value="addr = 0x5c41..." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="515" y="220" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-24" value="addr =0xa80e..." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="875" y="480" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-27" value="Before upgrading" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="260" y="150" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-28" value="New DARC deployed" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="255" y="410" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-178" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="xfDnAwwiv2tREo297iEu-101" target="xfDnAwwiv2tREo297iEu-165" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-101" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="630" width="620" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-110" value="&lt;font color=&quot;#cc0000&quot; style=&quot;background-color: rgb(238, 255, 0);&quot; face=&quot;Courier New&quot;&gt;//execute By-law Script on My DARC 1&lt;br&gt;upgradeToAddress(&#39;0xa80e...&#39;);&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="760" y="860" width="300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-111" value="Deploy and setup a newer version of DARC" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="790" y="278" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-112" value="Setup My DARC 2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="190" y="710" width="225" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-145" value="confirm_upgraded_from_address = 0x0000..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="190" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-146" value="My DARC 1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="340" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-147" value="upgrade_address = 0x0000..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="420" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-148" value="addr = 0x5c41..." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="515" y="480" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-149" value="confirm_upgraded_from_address = 0x0000..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="450" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-150" value="My DARC 1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="340" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-151" value="upgrade_address = 0x0000..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="420" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-152" value="upgraded_from_address = 0x0000..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="450" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-155" value="addr =0xa80e..." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="875" y="780" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-156" value="My DARC 1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="640" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-157" value="upgrade_address = 0x0000..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="720" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-158" value="addr = 0x5c41..." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="515" y="780" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-159" value="confirm_upgraded_from_address = 0x0000..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="750" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-160" value="My DARC 2" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="640" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-161" value="upgrade_address = 0x0000..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="720" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-162" value="upgraded_from_address = 0x5c41..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="750" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-165" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="930" width="620" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-166" value="addr =0xa80e..." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="875" y="1080" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-167" value="My DARC 1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="940" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-168" value="upgrade_address = 0xa80e..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="1020" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-169" value="addr = 0x5c41..." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="515" y="1080" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-170" value="confirm_upgraded_from_address = 0x0000..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="1050" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-171" value="My DARC 2" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="940" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-172" value="upgrade_address = 0x0000..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="1020" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-177" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#0000FF;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="820" y="764.67" as="sourcePoint" />
+            <mxPoint x="680" y="764.67" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-173" value="upgraded_from_address = 0x5c41..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="1050" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-174" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FF0303;" parent="1" source="xfDnAwwiv2tREo297iEu-168" target="xfDnAwwiv2tREo297iEu-171" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="710" y="1030" as="sourcePoint" />
+            <mxPoint x="760" y="980" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="760" y="1040" />
+              <mxPoint x="740" y="970" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-175" value="Upgrade from My DARC 1 to My DARC 2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="750" y="840" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-179" value="My DARC 1 upgraded from My DARC 2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="210" y="1010" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-180" value="&lt;font color=&quot;#cc0000&quot; style=&quot;background-color: rgb(238, 255, 0);&quot; face=&quot;Courier New&quot;&gt;//execute By-law Script on My DARC 2&lt;br&gt;confirmUpgradedFromAddress(&#39;0x5c41...&#39;);&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="770" y="570" width="300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-181" value="Allow My DARC 2 to be upgraded from My DARC 1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="750" y="540" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xfDnAwwiv2tREo297iEu-192" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#0000FF;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="820" y="1064.6699999999998" as="sourcePoint" />
+            <mxPoint x="680" y="1064.6699999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

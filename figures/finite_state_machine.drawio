@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net" modified="2023-09-25T06:12:57.233Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="d7J4JCpZWX5t9GKaGhkz" version="21.6.1" type="device">
+  <diagram name="Page-1" id="42789a77-a242-8287-6e28-9cd8cfd52e62">
+    <mxGraphModel dx="925" dy="536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DnGffz_466ZrysaMsBKr-1" value="idle state" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="310" y="180" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-2" value="voting state" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="570" y="180" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-3" value="execution pending state" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="435" y="390" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-10" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.263;exitY=0.067;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.004;entryY=0.408;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="DnGffz_466ZrysaMsBKr-1" target="DnGffz_466ZrysaMsBKr-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="200" as="sourcePoint" />
+            <mxPoint x="430" y="150" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="330" y="150" />
+              <mxPoint x="270" y="120" />
+              <mxPoint x="240" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-11" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.017;entryY=0.575;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="DnGffz_466ZrysaMsBKr-1" target="DnGffz_466ZrysaMsBKr-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="278" y="367" as="sourcePoint" />
+            <mxPoint x="250" y="350" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="290" y="290" />
+              <mxPoint x="260" y="290" />
+              <mxPoint x="250" y="260" />
+              <mxPoint x="265" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-13" value="program rejected" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="DnGffz_466ZrysaMsBKr-11">
+          <mxGeometry x="-0.0246" relative="1" as="geometry">
+            <mxPoint x="-47" y="-22" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-12" value="program approved" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="210" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-15" value="program ready for voting" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="410" y="230" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-16" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0.188;entryY=0.875;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="DnGffz_466ZrysaMsBKr-1" target="DnGffz_466ZrysaMsBKr-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390.00427124746193" y="298.284271247462" as="sourcePoint" />
+            <mxPoint x="584.04" y="252" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="470" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-18" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.075;exitY=0.254;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.963;entryY=0.271;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="DnGffz_466ZrysaMsBKr-2" target="DnGffz_466ZrysaMsBKr-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="170" as="sourcePoint" />
+            <mxPoint x="520" y="120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="540" y="150" />
+              <mxPoint x="440" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-19" value="rejected by voting result" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="400" y="108" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-20" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.583;exitY=1.017;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.942;entryY=0.246;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="DnGffz_466ZrysaMsBKr-2" target="DnGffz_466ZrysaMsBKr-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="690" y="370" as="sourcePoint" />
+            <mxPoint x="740" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="590" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-21" value="program approved by voting result" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="360" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-22" value="" style="curved=1;endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="DnGffz_466ZrysaMsBKr-3" target="DnGffz_466ZrysaMsBKr-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="360" as="sourcePoint" />
+            <mxPoint x="460" y="310" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="400" y="390" />
+              <mxPoint x="360" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DnGffz_466ZrysaMsBKr-23" value="program executed,&lt;br&gt;or timeout for execution" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="360" width="160" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
