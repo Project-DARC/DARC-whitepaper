@@ -84,6 +84,8 @@ For before-operation plugins, whenever a program is submitted to the DARC protoc
 \end{enumerate}
 
 
+
+
 \begin{figure}
 \centering
 \includegraphics[width=1\linewidth]{judgement_plugin_levels_before_ops.drawio.png}
@@ -99,7 +101,6 @@ Figure \ref{fig:judgement-before-op} illustrates how individual operations withi
 
 
 
-
 For after-operation plugins, once a program has completed its full execution in the sandbox, the judgment system sequentially examines each operation. For each operation, the judgment system traverses each after-operation plugin, obtaining an individual judgment result. Ultimately, the results for all operations are aggregated to determine the final program result, deciding whether the program needs approval through voting (\texttt{VOTING\_NEEDED}), should be rejected outright (\texttt{NO}), or can proceed directly (\texttt{YES}). The following rules apply to after-operation judgment:
 
 \begin{enumerate}
@@ -107,6 +108,7 @@ For after-operation plugins, once a program has completed its full execution in 
     \item If none of the operations have been determined as \texttt{NO} by the judgement system, and at least one operation has been determined as \texttt{VOTING\_NEEDED}, the final judgement for the entire program is \texttt{VOTING\_NEEDED}. This program will be placed into the pending program category, and the DARC protocol must initiate the voting system to decide on approval or rejection.
     \item If all operations are judged by the judgment system as \texttt{YES}, the entire program is approved with a result of \texttt{YES}, the entire program can be executed directly.
 \end{enumerate}
+
 
 
 
