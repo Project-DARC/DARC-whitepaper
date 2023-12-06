@@ -78,9 +78,9 @@ For the majority of simple operations that can be approved without the need for 
 For before-operation plugins, whenever a program is submitted to the DARC protocol, the judgment system sequentially checks each operation. For each operation, the judgment system traverses each before-operation plugin and obtains a single judgment result. Finally, it aggregates the results for all operations to determine the overall result for the entire program. This decision dictates whether the program needs to run in the sandbox (\texttt{SANDBOX\_NEEDED}), be rejected outright (\texttt{NO}), or run directly without the need for the sandbox (\texttt{YES\_AND\_SKIP\_SANDBOX}). For before-operation judgment, the following rules are followed:
 
 \begin{enumerate}
-    \item If any before-operation plugin returns a judgment result of \texttt{NO} for an operation, the entire program is rejected with a result of \texttt{NO}.
-    \item If any before-operation plugin returns a judgment result of \texttt{SANDBOX\_NEEDED} for an operation, the entire program is required to run in the sandbox, and the result is \texttt{SANDBOX\_NEEDED}.
-    \item If all before-operation plugins return a judgment result of \texttt{YES\_AND\_SKIP\_SANDBOX} for an operation, the entire program can skip the sandbox, and the result is \texttt{YES\_AND\_SKIP\_SANDBOX}.
+    \item If any operation is judged by the judgment system as \texttt{NO}, the entire program is rejected with a result of \texttt{NO}.
+    \item If none of the operations is judged by the judgment system as \texttt{NO}, and at least one operation is judged as \texttt{SANDBOX\_NEEDED}, the entire program is required to run in the sandbox, and the result is \texttt{SANDBOX\_NEEDED}.
+    \item If all operations are judged by the judgment system as \texttt{YES\_AND\_SKIP\_SANDBOX}, the entire program is approved with a result of \texttt{YES\_AND\_SKIP\_SANDBOX}, the entire program can skip the sandbox.
 \end{enumerate}
 
 
@@ -100,6 +100,13 @@ Figure \ref{fig:judgement-before-op} illustrates how individual operations withi
 
 
 
+For after-operation plugins, once a program has completed its full execution in the sandbox, the judgment system sequentially examines each operation. For each operation, the judgment system traverses each after-operation plugin, obtaining an individual judgment result. Ultimately, the results for all operations are aggregated to determine the final program result, deciding whether the program needs approval through voting (\texttt{VOTING\_NEEDED}), should be rejected outright (\texttt{NO}), or can proceed directly (\texttt{YES}). The following rules apply to after-operation judgment:
+
+\begin{enumerate}
+    \item If any operation is judged by the judgment system as \texttt{NO}, the entire program is rejected with a result of \texttt{NO}.
+    \item If none of the operations have been determined as \texttt{NO} by the judgement system, and at least one operation has been determined as \texttt{VOTING\_NEEDED}, the final judgement for the entire program is \texttt{VOTING\_NEEDED}. This program will be placed into the pending program category, and the DARC protocol must initiate the voting system to decide on approval or rejection.
+    \item If all operations are judged by the judgment system as \texttt{YES}, the entire program is approved with a result of \texttt{YES}, the entire program can be executed directly.
+\end{enumerate}
 
 
 
