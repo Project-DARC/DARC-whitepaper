@@ -303,3 +303,4 @@ TSWLatexianTemp*
 *.aux
 *.blg
 *.fls
+*.log
