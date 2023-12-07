@@ -19,6 +19,7 @@
 \usetikzlibrary{arrows.meta,bending,positioning}
 \usepackage{listings}
 \usepackage{subfiles}
+\usepackage{appendix}
 
 \title{DARC: Decentralized Autonomous Regulated Corporation}
 \author{Xinran Wang}
@@ -27,10 +28,13 @@
 \maketitle
 
 \begin{abstract}
-In this paper, we propose a full-stack Decentralized Autonomous Regulated Corporation (DARC) - a virtual machine that enables users to manually configure the rules and regulations for the organization using a plugin system. This allows users to create and generate a company-like Decentralized Autonomous Organization (DAO) in the form of a smart contract on the blockchain. The organization's "by-laws" are defined by a set of plugins, and these contracts are developed and deployed to a Decision Machine - a virtual machine smart contract that executes the governance operations of the DAO with restrictions imposed by the plugins. DARC also facilitates the setup of multi-class token systems with different voting and dividend weights for token owners. It enables operations to periodically pay dividends to token owners based on predefined time periods or specific transactions. In essence, DARC's design aims to emulate a real company and can be deployed and executed as such.
+Decentralized autonomous organizations (DAOs) show promise but lack governance mechanisms. This paper proposes DARC, a Decentralized Autonomous Regulated Corporation designed to facilitate oversight of DAOs. DARC operates as a virtual machine on an EVM-compatible blockchain and incorporates configurable ``plugins'' outlining policies and procedures. Users can run programs on the DARC virtual machine to execute company operations such as equity, cash, and voting, with all actions subject to constraints and rules defined by plugins. DARC supports multi-token systems and dividends distribution, resembling corporate features. The By-law Script serves as DARC's programming language, enabling the design of DARC programs and operations, as well as the customization of plugins.
 \end{abstract}
 
 \section{Introduction}
+
+
+Decentralized autonomous organizations (DAOs) offer promise but lack governance mechanisms. This paper proposes DARC, a Decentralized Autonomous Regulated Corporation enabling oversight of DAOs. DARC incorporates configurable "plugins" outlining policies and procedures. 
 
 Your introduction goes here! Simply start writing your document and use the Recompile button to view the updated PDF preview. Examples of commonly used commands and features are listed below, to help you get started.
 
@@ -67,12 +71,12 @@ Once you're familiar with the editor, you can find various project settings in t
 
 \subfile{sub_upgradablity}
 
-
-
+\section{Conclusion}
 
 
 \bibliographystyle{alpha}
 \bibliography{sample}
 
+\subfile{sub_appendix}
 
 \end{document}

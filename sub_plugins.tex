@@ -60,7 +60,7 @@ The other parameter is the 'voting rule index,' which points to a specific index
 
 
 
-\subsection{The Plugin and the Judgement System}
+\subsection{Plugins and the Judgement System}
 
 For the DARC protocol, the judgment system needs to undergo two assessments: one through before-operation plugins and another after the program has run completely in the sandbox, followed by evaluation through after-operation plugins. The reason for this design is that, without a sandbox and relying solely on a set of plugins for judgment, it becomes challenging to anticipate the behavior of the program. As a result, it is not possible to protect against modifications to special states in the DARC protocol.
 
@@ -108,6 +108,16 @@ For after-operation plugins, once a program has completed its full execution in 
     \item If none of the operations have been determined as \texttt{NO} by the judgement system, and at least one operation has been determined as \texttt{VOTING\_NEEDED}, the final judgement for the entire program is \texttt{VOTING\_NEEDED}. This program will be placed into the pending program category, and the DARC protocol must initiate the voting system to decide on approval or rejection.
     \item If all operations are judged by the judgment system as \texttt{YES}, the entire program is approved with a result of \texttt{YES}, the entire program can be executed directly.
 \end{enumerate}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{judgement_plugin_levels_after_ops.drawio.png}
+    \caption{\label{fig:judgement-after-op}Judgement on program with after-operation plugins}
+\end{figure}
+
+Figure \ref{fig:judgement-before-op} illustrates how individual operations within a program are judged by after-operation plugins, resulting in judgment outcomes.
+
 
 
 
