@@ -115,7 +115,7 @@ struct MemberInfo {
 
 \subsubsection{Withdrawable cash and dividends}
 
-Withdrawable cash and dividends are two separate balance hashmaps. Operator can withdraw native tokens(like ETH) from both of the balance if the balance is not zero. For withdrawable cash, the only way to add withdrawable tokens to the address balance is to execute \texttt{BATCH\_ADD\_WITHDRAWABLE\_BALANCE} operation with target addresses and amounts of tokens. If the operation is approved, the corresponding amounts will be added to the balances. For dividends, the only way to add withdrawable tokens to the balance is to execute \texttt{OFFER\_DIVIDENDS} operation without any parameters. If the operation is approved, all token holders with dividendable tokens(tokens with dividend weight larger than 0) will receive the corresponding amount of dividends.
+Withdrawable cash and dividends are two separate balance hashmaps. Operator can withdraw native tokens(like Ethereum) from both of the balance if the balance is not zero. For withdrawable cash, the only way to add withdrawable tokens to the address balance is to execute \texttt{BATCH\_ADD\_WITHDRAWABLE\_BALANCE} operation with target addresses and amounts of tokens. If the operation is approved, the corresponding amounts will be added to the balances. For dividends, the only way to add withdrawable tokens to the balance is to execute \texttt{OFFER\_DIVIDENDS} operation without any parameters. If the operation is approved, all token holders with dividendable tokens(tokens with dividend weight larger than 0) will receive the corresponding amount of dividends.
 
 To withdraw the native tokens from the DARC to the address, the operator can execute \texttt{WITHDRAW\_CASH\_TO} to transfer withdrawable cash from balance to target addresses, or execute \texttt{WITHDRAW\_DIVIDENDS\_TO} to transfer dividends from balance to target addresses if the operations are approved.
 
@@ -123,14 +123,14 @@ To withdraw the native tokens from the DARC to the address, the operator can exe
 
 Operation history is a log system that contains each address with its all the corresponding operations, each operation with its latest timestamp. When a program is executed and terminated successfully, the timestamps of the operations contained in the program will be updated in the operation history. With the operation history, developers can set minimum time interval between each operations for a single address or for all members in the DARC.
 
-\textbf{Rule 2} is an example about using operation history to limit the operator to execute the same operation in a period of time:
+\textbf{Rule 1} is an example about using operation history to limit the operator to execute the same operation in a period of time:
 
-\textbf{Rule 2}: We provide 10 ETH per month as the salary for both employee-level and manager-level address (level 4 \& 5).
+\textbf{Rule 1}: We provide 10 ETH per month as the salary for both employee-level and manager-level address (level 4 \& 5).
 
 
-For the \textbf{Rule 2}, we need to make sure that if the operator is assigned with a role level equals 4 or 5, the operation is adding withdrawable balance, the total amount of operation is less than or equal to 10 ETH(or 10000000000000000000 wei), and the operator did the same operation in more than 30 days(or 2592000 seconds), this operation will be approved and sandbox check can be skipped for this operation.
+For the \textbf{Rule 1}, we need to make sure that if the operator is assigned with a role level equals 4 or 5, the operation is adding withdrawable balance, the total amount of operation is less than or equal to 10 ETH(or 10000000000000000000 wei), and the operator did the same operation in more than 30 days(or 2592000 seconds), this operation will be approved and sandbox check can be skipped for this operation.
 
-Here is an example plugin for \textbf{Rule 2} designed in By-law Script:
+Here is an example plugin for \textbf{Rule 1} designed in By-law Script:
 
 \begin{verbatim}
 const plugin_Rule_2 = 
