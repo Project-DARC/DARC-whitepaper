@@ -3,10 +3,9 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: alpha.bst
 Database file #1: sample.bib
-Warning--I didn't find a database entry for "dao_paper"
 You've used 1 entry,
             2543 wiz_defined-function locations,
-            562 strings with 4563 characters,
+            561 strings with 4554 characters,
 and the built_in function-call counts, 219 in all, are:
 = -- 17
 > -- 1
@@ -45,4 +44,3 @@ warning$ -- 0
 while$ -- 0
 width$ -- 2
 write$ -- 9
-(There was 1 warning)

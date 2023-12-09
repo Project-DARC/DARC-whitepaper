@@ -24,7 +24,7 @@ Each plugin consists of two crucial components: ``condition'' and ``decision''. 
 
 \subsubsection{Levels of Plugins}
 
-For each operation, there is an associated ``level.'' Within each DARC protocol, there are multiple plugins, each of which may have the same or different levels. When multiple plugins are triggered simultaneously for a single operation, the DARC protocol selects the plugin with the highest level and uses that plugin's decision as the final decision.
+For each operation, there is an associated ``level''. Within each DARC protocol, there are multiple plugins, each of which may have the same or different levels. When multiple plugins are triggered simultaneously for a single operation, the DARC protocol selects the plugin with the highest level and uses that plugin's decision as the final decision.
 
 Additionally, all plugins at the same level must have the same decision type. This requirement ensures that when multiple plugins at the same level are triggered simultaneously, the final decision is consistent. This design simplifies the decision-making process and ensures that there is no ambiguity when multiple plugins of the same level are involved.
 

@@ -337,6 +337,194 @@
 
 \section*{Appendix 2: Reference Design of Program and Operation}
 
+\begin{spverbatim}
+
+/**
+  * The parameter(s) or operand(s) of the operation
+  */
+struct Param {
+  uint256[] UINT256_ARRAY;
+  address[] ADDRESS_ARRAY;
+  string[] STRING_ARRAY;
+  bool[] BOOL_ARRAY;
+  VotingRule[] VOTING_RULE_ARRAY;
+  Plugin[] PLUGIN_ARRAY;
+  MachineParameter[] PARAMETER_ARRAY;
+  uint256[][] UINT256_2DARRAY;
+  address[][] ADDRESS_2DARRAY;
+}
+
+/**
+  * The operation to be executed, including the operator address, the opcode and the parameters
+  */
+struct Operation {
+  address operatorAddress;
+  EnumOpcode opcode;
+  Param param;
+}
+
+/**
+  * The program to be executed, including the operator address and the operation array
+  */
+struct Program {
+  address programOperatorAddress;
+
+  /**
+   * @notice operations: the array of the operations to be executed
+   */
+  Operation[] operations;
+}
+
+\end{spverbatim}
+
 \section*{Appendix 3: Reference Design of Plugin}
+
+\begin{spverbatim}
+/** 
+  * The condition node types
+  */
+enum EnumConditionNodeType { UNDEFINED, EXPRESSION, LOGICAL_OPERATOR, BOOLEAN_TRUE, BOOLEAN_FALSE}
+
+/**
+  * The logical operator types
+  */
+enum EnumLogicalOperatorType {UNDEFINED, AND, OR, NOT }
+
+
+enum EnumReturnType { 
+
+  /**
+   * The default value. The plugin system will return UNDEFINED if no plugin is triggered.
+   * Both BEFORE and AFTER operation plugin system may return UNDEFINED.
+   */
+  UNDEFINED,   
+
+
+  /**
+   * The operation is approved but must be executed in sandbox to check if the operation
+   * is valid in the current machine state.
+   * Only BEFORE operation plugin system may return SANDBOX_NEEDED.
+   */
+  SANDBOX_NEEDED,  
+
+  /**
+   * The operation is disapproved and should be rejected at this level.
+   * Both BEFORE and AFTER operation plugin system may return NO.
+   */
+  NO, 
+
+  /**
+   * The decision is pending and a voting item should be created at this level.
+   * Only AFTER operation plugin system may return VOTE_NEEDED.
+   */
+  VOTE_NEEDED, 
+
+  /**
+   * The operation is approved and should skip the sandbox check.
+   * Only BEFORE operation plugin system may return YES_AND_SKIP_SANDBOX.
+   */
+  YES_AND_SKIP_SANDBOX,
+
+  /**
+   * The operation is finally approved at this level.
+   * Only AFTER operation plugin system may return YES.
+   */
+  YES 
+}
+
+/**
+  * The condition node expression parameters
+  */
+struct NodeParam {
+  uint256[] UINT256_ARRAY;
+  address[] ADDRESS_ARRAY;
+  string[] STRING_ARRAY;
+  uint256[][] UINT256_2DARRAY;
+  address[][] ADDRESS_2DARRAY;
+  string[][] STRING_2DARRAY;
+}
+
+/**
+  * The condition node struct
+  */
+struct ConditionNode {
+  /**
+   * current condition node index
+   */
+  uint256 id;
+
+  /**
+   * the type of current condition node
+   */
+  EnumConditionNodeType nodeType;
+
+  /**
+   * the logic operator of the current condition node
+   */
+  EnumLogicalOperatorType logicalOperator;
+
+  /**
+   * the condition expression of the current condition node
+   */
+  EnumConditionExpression conditionExpression;
+
+  /**
+   * a list of the child nodes of the current condition node
+   */
+  uint256[] childList;
+
+  /**
+   * The array of the EXPRESSION node parameters
+   */
+  NodeParam param;
+}
+
+/** 
+  * The struct of the plugin
+  */
+struct Plugin {
+  /**
+   * the return type of the current condition node
+   */
+  EnumReturnType returnType;
+
+  /**
+   * the level of restriction, from 0 to the maximum value of uint256
+   */
+  uint256 level;
+
+  /**
+   * condition binary expression tree vector
+   */
+  ConditionNode[] conditionNodes;
+
+  /**
+   * the voting rule id of the current plugin if the return type is VOTE_NEEDED
+   */
+  uint256 votingRuleIndex;
+
+  /**
+   * the plugin note
+   */
+  string note;
+
+  /**
+   * the boolean that indicates whether the plugin is enabled or not
+   */
+  bool bIsEnabled;
+
+  /**
+   * the boolean that indicates whether the plugin is deleted or not
+   */
+  bool bIsInitialized;
+
+  /**
+   * the boolean that indicates whether the plugin is a before operation 
+   * plugin or after operation plugin
+   */
+  bool bIsBeforeOperation;
+  
+}
+\end{spverbatim}
 
 \end{document}
