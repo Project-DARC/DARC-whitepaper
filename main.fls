@@ -2,7 +2,7 @@ PWD /Users/xinranwang/Documents/GitHub/DARC-whitepaper
 INPUT /usr/local/texlive/2022/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/xinranwang/Documents/GitHub/DARC-whitepaper/main.tex
+INPUT main.tex
 OUTPUT main.log
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
@@ -1097,6 +1097,13 @@ INPUT ./upgradablity-multi.drawio.png
 INPUT upgradablity-multi.drawio.png
 INPUT ./upgradablity-multi.drawio.png
 INPUT ./upgradablity-multi.drawio.png
+INPUT ./sub_discussion.tex
+INPUT ./sub_discussion.tex
+INPUT ./sub_discussion.tex
+INPUT sub_discussion.tex
+INPUT ./sub_discussion.tex
+INPUT ./sub_discussion.tex
+INPUT sub_discussion.tex
 INPUT ./main.bbl
 INPUT main.bbl
 INPUT ./main.bbl
