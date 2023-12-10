@@ -3,9 +3,9 @@
 \section{DARC Architecture}
 
 
-The DARC is a virtual machine built with Solidity programming language, and can be compiled and deployed to any EVM-compatible on local devnet, testnet or mainnet without contract code size limit(EIP-170). After the DARC protocol is successfully compiled and deployed to your blockchain, user can compose a program and send it to your DARC virtual machine using darc.js(the official Node.js SDK for deploying and interacting with your DARC) or ethers.js with corresponding DARC Application Binary Interface(ABI). User can also read data and information from the deployed DARC in this way.
+The DARC is a virtual machine built with Solidity programming language \cite{soliditylangSolidityx2014}, and can be compiled and deployed to any EVM-compatible on local devnet, testnet or mainnet without contract code size limit(EIP-170). After the DARC protocol is successfully compiled and deployed to your blockchain, user can compose a program and send it to your DARC virtual machine using darc.js(the official Node.js SDK for deploying and interacting with your DARC) or ethers.js \cite{ethersDocumentation} with corresponding DARC Application Binary Interface(ABI). User can also read data and information from the deployed DARC in this way.
 
-Figure 1 shows the overview of the DARC protocol. 
+Figure \ref{fig:architecture} shows the overview of the DARC protocol. 
 
 \begin{figure}
 \centering
@@ -19,7 +19,7 @@ The first level of DARC virtual machine is the Application Binary Interface (ABI
 
 \subsection{Program Loader}
 
-Program loader is the module in the DARC runtime that receive the program from users. As the entrance of the DARC virtual machine, Program loader will manage the whole process of handling the program, including validating the program, executing the program, determine the program compliance with the restriction plugin system, sending the program to the sandbox, starting a voting, ending a voting, pause a voting, refund unnecessary cash (the native tokens) back to the account balance. Program loader is the basic and fundamental module that handle the whole lifecycle of executing a program, as well as the state of the DARC for voting period.
+Program loader is the module in the DARC runtime that receive the program from users. As the entrance of the DARC virtual machine, Program loader manages the whole process of handling the program, including validating the program, executing the program, determine the program compliance with the restriction plugin system, sending the program to the sandbox, starting a voting, ending a voting, pause a voting, refund unnecessary cash (the native tokens) back to the account balance. Program loader is the basic and fundamental module that handle the whole lifecycle of executing a program, as well as the state of the DARC for voting period.
 
 \subsubsection{Program Validator}
 
@@ -80,9 +80,7 @@ struct Token {
 }
 \end{verbatim}
 
-The token balance is the the core mapping from address to uint256. The key is the owner address of current level token, and the value is the number of tokens owned by this owner address. Also DARC maintains an array of address, ownerList, as the full list of all addresses with at least one token in current level of token.
-
-By maintaining the array of token struct, the machine state manager can initialize a new token level, mint tokens, burn tokens, transfer tokens and other functionalities.
+The token balance is a mapping from address to uint256. The key is the owner address of current level token, and the value is the number of tokens owned by this owner address. Also DARC maintains an array of address, ownerList, as the full list of all addresses with at least one token in current level of token.
 
 \subsubsection{Memberships}
 
@@ -101,7 +99,7 @@ In the implementation of DARC Protocol, membership is defined as the following d
 mapping (address => MemberInfo) memberInfoMap;
 
 /**
- * @notice The stock token owner information of the DARC protocol
+ * The stock token owner information of the DARC protocol
  * This struct is used to store the role index number of each token owner
  */
 struct MemberInfo {
@@ -121,35 +119,37 @@ To withdraw the native tokens from the DARC to the address, the operator can exe
 
 \subsubsection{Operation History}
 
-Operation history is a log system that contains each address with its all the corresponding operations, each operation with its latest timestamp. When a program is executed and terminated successfully, the timestamps of the operations contained in the program will be updated in the operation history. With the operation history, developers can set minimum time interval between each operations for a single address or for all members in the DARC.
+Operation history is a log system that contains each address with its all the corresponding operations, each operation with its latest timestamp. When a program is executed successfully, the timestamps of the operations contained in the program will be updated in the operation history. With the operation history, developers can set minimum time interval between each operations for a single address or for all members in the DARC.
 
-\textbf{Rule 1} is an example about using operation history to limit the operator to execute the same operation in a period of time:
+Rule 1 is an example about using operation history to limit the operator to execute the same operation in a period of time:
 
-\textbf{Rule 1}: We provide 10 ETH per month as the salary for both employee-level and manager-level address (level 4 \& 5).
+\textbf{Rule 1}: We provide 10 ETH per month as the salary for both employee-level and manager-level address (level 4 \& 5 members).
 
 
-For the \textbf{Rule 1}, we need to make sure that if the operator is assigned with a role level equals 4 or 5, the operation is adding withdrawable balance, the total amount of operation is less than or equal to 10 ETH(or 10000000000000000000 wei), and the operator did the same operation in more than 30 days(or 2592000 seconds), this operation will be approved and sandbox check can be skipped for this operation.
+For the Rule 1, we need to make sure that if the operator is assigned with a role level equals 4 or 5, the operation is adding withdrawable balance, the total amount of operation is less than or equal to 10 ETH(or 10000000000000000000 wei), and the operator did the same operation in more than 30 days(or 2592000 seconds), this operation will be approved and sandbox check can be skipped for this operation.
 
-Here is an example plugin for \textbf{Rule 1} designed in By-law Script:
+Here is an example plugin for Rule 1 designed in By-law Script:
 
 \begin{verbatim}
-const plugin_Rule_2 = 
+const plugin_Rule_1 = 
 {
     condition: (operation_name === BATCH_ADD_WITHDRAWABLE_BALANCE)
-               & ( total_add_withdrawable_balance <= 10000000000000000000)
-               & ( last_operation_by_operation_period >= 2592000) 
-               & ( (operator_membership_level === 4) | (operator_membership_level === 5) ) ,
-    return_type: YES_AND_SKIP_SANDBOX,
-    is_before_operation: true,
-    return_level: 100,
-    voting_rule_index: 0
+               & ( total_add_withdrawable_balance_up_to(10000000000000000000))
+               & ( last_operation_by_operation_period_down_to(2592000)) 
+               & ( (operator_membership_level_equals(4)) | (operator_membership_level_equals(5)) ) ,
+    returnType: YES_AND_SKIP_SANDBOX,
+    bIsBeforeOperation: true,
+    level: 100,
+    votingRuleIndex: 0,
+    note: "Rule 1"
 }
 \end{verbatim}
+
+Rule 1 does not restrict the target address of the \texttt{BATCH\_ADD\_WITHDRAWABLE\_BALANCE} operation. This is because operators are allowed to add 10 ETH to their own withdrawable cash, and they are also allowed to add to other addresses, as long as they do not exceed a total of 10 ETH of add withdrawable cash within 30 days.
 
 \subsubsection{Plugins}
 
 Plugins are the fundamental mechanism in DARC protocol, because all the rules and regulations need to be defined, transpiled and saved in DARC plugin system. There are two plugin arrays in the DARC protocol: before-operation plugins and after-operation plugins.
-
 
 
 In the figure \ref{fig:workflow}, each program submitted to a DARC needs to be checked by all before-operation plugins, and if any operation of the program violates any before-operation plugin, the program will be rejected. 

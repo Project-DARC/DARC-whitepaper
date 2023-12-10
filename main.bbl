@@ -5,6 +5,11 @@
 Vitalik Buterin et~al.
 \newblock Ethereum white paper.
 
+\bibitem[eth]{ethersDocumentation}
+{D}ocumentation --- docs.ethers.org.
+\newblock \url{https://docs.ethers.org/v6/}.
+\newblock [Accessed 10-12-2023].
+
 \bibitem[Jen16]{jentzsch2016decentralized}
 Christoph Jentzsch.
 \newblock Decentralized autonomous organization to automate governance.
@@ -13,5 +18,10 @@ Christoph Jentzsch.
 \bibitem[Ope]{proxy}
 ``Proxy Upgrade Pattern'', OpenZeppelin Docs,
   https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies.
+
+\bibitem[sol]{soliditylangSolidityx2014}
+{S}olidity \&#x2014; {S}olidity 0.8.23 documentation --- docs.soliditylang.org.
+\newblock \url{https://docs.soliditylang.org/en/v0.8.23/}.
+\newblock [Accessed 10-12-2023].
 
 \end{thebibliography}

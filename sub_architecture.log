@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.20)  7 DEC 2023 09:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.20)  10 DEC 2023 03:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -555,12 +555,33 @@ Package: appendix 2020/02/08 v1.2c extra appendix facilities
 \c@@pps=\count325
 \c@@ppsavesec=\count326
 \c@@ppsaveapp=\count327
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen305
+\ar@mcellbox=\box69
+\extrarowheight=\dimen306
+\NC@list=\toks42
+\extratabsurround=\skip55
+\backup@length=\skip56
+\ar@cellbox=\box70
+)
+\TX@col@width=\dimen307
+\TX@old@table=\dimen308
+\TX@old@col=\dimen309
+\TX@target=\dimen310
+\TX@delta=\dimen311
+\TX@cols=\count328
+\TX@ftn=\toks43
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/spverbatim/spverbatim.sty
+Package: spverbatim 2009/08/10 v1.0 Verbatim with breakable spaces
 ))) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-08-05 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count328
-\l__pdf_internal_box=\box69
-)
-(./sub_architecture.aux)
+\l__color_backend_stack_int=\count329
+\l__pdf_internal_box=\box71
+) (./sub_architecture.aux)
 \openout1 = `sub_architecture.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
@@ -618,17 +639,17 @@ LaTeX Font Info:    ... okay on input line 2.
 
 (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
-\scratchdimen=\dimen305
-\scratchbox=\box70
-\nofMPsegments=\count330
-\nofMParguments=\count331
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count332
-\MPscratchDim=\dimen306
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
-\everyMPtoPDFconversion=\toks43
+\scratchcounter=\count330
+\scratchdimen=\dimen312
+\scratchbox=\box72
+\nofMPsegments=\count331
+\nofMParguments=\count332
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count333
+\MPscratchDim=\dimen313
+\MPnumerator=\count334
+\makeMPintoPDFobject=\count335
+\everyMPtoPDFconversion=\toks45
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -640,33 +661,40 @@ Package hyperref Info: Link coloring ON on input line 2.
 \@outlinefile=\write4
 \openout4 = `sub_architecture.out'.
 
-\c@lstlisting=\count335
-<architecture.png, id=71, 1566.85374pt x 743.77875pt>
+\c@lstlisting=\count336
+
+
+LaTeX Warning: Citation `soliditylangSolidityx2014' on page 1 undefined on input line 6.
+
+
+LaTeX Warning: Citation `ethersDocumentation' on page 1 undefined on input line 6.
+
+<architecture.png, id=72, 1566.85374pt x 743.77875pt>
 File: architecture.png Graphic file (type png)
 <use architecture.png>
 Package pdftex.def Info: architecture.png  used on input line 12.
 (pdftex.def)             Requested size: 443.57848pt x 210.5605pt.
- [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+[1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
  <./architecture.png>] [2]
-<execution_flow.drawio.png, id=88, 2413.015pt x 3456.915pt>
+<execution_flow.drawio.png, id=89, 2413.015pt x 3456.915pt>
 File: execution_flow.drawio.png Graphic file (type png)
 <use execution_flow.drawio.png>
 Package pdftex.def Info: execution_flow.drawio.png  used on input line 56.
 (pdftex.def)             Requested size: 443.57848pt x 635.45766pt.
  [3] [4 <./execution_flow.drawio.png>]
-Overfull \hbox (21.17729pt too wide) in paragraph at lines 118--119
+Overfull \hbox (21.17729pt too wide) in paragraph at lines 116--117
 \OT1/cmr/m/n/10 only way to add with-draw-able to-kens to the ad-dress bal-ance is to ex-e-cute \OT1/cmtt/m/n/10 BATCH[]ADD[]WITHDRAWABLE[]BALANCE
  []
 
 
-Overfull \hbox (26.34134pt too wide) in paragraph at lines 120--121
+Overfull \hbox (26.34134pt too wide) in paragraph at lines 118--119
 []\OT1/cmr/m/n/10 To with-draw the na-tive to-kens from the DARC to the ad-dress, the op-er-a-tor can ex-e-cute \OT1/cmtt/m/n/10 WITHDRAW[]CASH[]TO
  []
 
 
-Overfull \hbox (39.41731pt too wide) in paragraph at lines 147--147
-[]               \OT1/cmtt/m/n/10 & ( (operator_membership_level === 4) | (operator_membership_level === 5) ) ,[] 
+Overfull \hbox (81.41695pt too wide) in paragraph at lines 146--146
+[]               \OT1/cmtt/m/n/10 & ( (operator_membership_level_equals(4)) | (operator_membership_level_equals(5)) ) ,[] 
  []
 
 [5]
@@ -675,22 +703,25 @@ Overfull \hbox (8.03485pt too wide) in paragraph at lines 161--162
  []
 
 [6] [7] [8] (./sub_architecture.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `sub_architecture.out' has not changed.
 (rerunfilecheck)             Checksum: 6091DF6F61C624D6EA9A7A5CA11437AA;2329.
  ) 
 Here is how much of TeX's memory you used:
- 23336 strings out of 477678
- 438670 string characters out of 5829469
- 736427 words of memory out of 5000000
- 41706 multiletter control sequences out of 15000+600000
+ 23490 strings out of 477678
+ 441602 string characters out of 5829469
+ 738514 words of memory out of 5000000
+ 41850 multiletter control sequences out of 15000+600000
  471280 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 119i,6n,120p,1012b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 119i,6n,120p,980b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on sub_architecture.pdf (8 pages, 395371 bytes).
+Output written on sub_architecture.pdf (8 pages, 395910 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
+ 153 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
  27 named destinations out of 1000 (max. 500000)
  151 words of extra memory for PDF output out of 10000 (max. 10000000)
 
