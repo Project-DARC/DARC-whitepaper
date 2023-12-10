@@ -15,7 +15,7 @@ By-law Script is a programming language with a JavaScript-like syntax specifical
 
 The syntax of the By-law Script closely resembles that of vanilla JavaScript, encompassing variables, constants, assignments, basic data types, functions, classes, and various other features. In addition to the fundamental JavaScript syntax, the By-law Script also supports operator overloading, which is particularly useful for describing condition nodes for plugins.
 
-Figure 1 illustrates how the By-law Script is executed within the DARC protocol. On the operator client side, the program of the By-law Script needs to be transpiled into vanilla JavaScript. Subsequently, it is executed in the local JavaScript runtime using a code generator. After the entire program is generated within the JSON body, it takes the form of a list of operations with opcodes and parameter lists. At this point, the program is ready to be submitted from the client side as a function call to the DARC Application Binary Interface (ABI) on the EVM-compatible blockchain.
+Figure \ref{fig:byLaw} illustrates how the By-law Script is executed within the DARC protocol. On the operator client side, the program of the By-law Script needs to be transpiled into vanilla JavaScript. Subsequently, it is executed in the local JavaScript runtime using a code generator. After the entire program is generated within the JSON body, it takes the form of a list of operations with opcodes and parameter lists. At this point, the program is ready to be submitted from the client side as a function call to the DARC Application Binary Interface (ABI) on the EVM-compatible blockchain.
 
 To execute the program within the DARC protocol, the DARC Software Development Kit (SDK) gains access to the address of the DARC smart contract and initiates the execution process by calling the entrance function with a wallet signature. This communication is facilitated through the JSON RPC server of the EVM-compatible blockchain.
 
@@ -28,7 +28,7 @@ To execute the program within the DARC protocol, the DARC Software Development K
 
 \subsection{Transpiler}
 
-After a user runs the By-law Script, the first step in the transpilation process involves converting the By-law Script into vanilla JavaScript. This initial transformation employs Babel.js for front-end syntax analysis and utilizes an operator overloading plugin to generate the resulting vanilla JavaScript code on the back end.
+After a user runs the By-law Script, the first step in the transpilation process involves converting the By-law Script into vanilla JavaScript. This initial transformation employs Babel.js \cite{githubGitHubBabelbabel} for front-end syntax analysis and utilizes an operator overloading plugin to generate the resulting vanilla JavaScript code on the back end.
 
 The primary significance of using the operator overloading plugin lies in its ability to transpile the syntax of logical operators within condition nodes designed by the user. Users create plugins to logically connect and describe various condition expressions using logical operators. When these plugins are transpiled with the operator overloading feature, each condition within a plugin is transformed into a tree-like structure expressed as an object constructed using pure functions and parameters.
 
