@@ -173,7 +173,7 @@ batch_add_and_enable_plugins([
 
     // adding after-operation plugin with index 0
     {
-        returnType: VOTE_NEEDED, // vote is needed
+        returnType: VOTING_NEEDED, // vote is needed
         level: 258, // level 258
         condition:
             operation === BATCH_MINT_TOKENS & 
@@ -418,7 +418,7 @@ const plugin_before_op_7 = {
 },
 
 const plugin_after_op_1 = {
-    returnType: VOTE_NEEDED,
+    returnType: VOTING_NEEDED,
     level: 253, 
     condition: operation === BATCH_BURN_TOKENS
                & level_of_token_burned === 3

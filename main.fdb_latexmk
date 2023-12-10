@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1702200257 "main.aux" "main.bbl" "main" 1702200274
+["bibtex main"] 1702221778 "main.aux" "main.bbl" "main" 1702221806
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
-  "main.aux" 1702200273 10791 d13cc505c97cdaf8aedaab8e51872008 "pdflatex"
+  "main.aux" 1702221806 10791 550f9a99b205d40e17e3c1fd13596629 "pdflatex"
   "sample.bib" 1702197165 1548 d2db7e1d05a9b4e73c974cb8f3de161f ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1702200257 "main.tex" "main.pdf" "main" 1702200274
+["pdflatex"] 1702221778 "main.tex" "main.pdf" "main" 1702221806
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -201,19 +201,19 @@
   "finite_state_machine.drawio.large.png" 1701818390 806722 c6e087f773c7e62527a4cc9a6936d3f9 ""
   "judgement_plugin_levels_after_ops.drawio.png" 1701848445 1112803 de329ae469dfca4332069c81c7a77e2f ""
   "judgement_plugin_levels_before_ops.drawio.png" 1701818390 1185258 17faf7dc1456208e7469b99e8b307499 ""
-  "main.aux" 1702200273 10791 d13cc505c97cdaf8aedaab8e51872008 "pdflatex"
-  "main.bbl" 1702200257 868 627572049669688df9a15777d8a20ab8 "bibtex main"
-  "main.out" 1702200273 7378 b848ca6ad02fbe8eb9aa0df8641007c5 "pdflatex"
+  "main.aux" 1702221806 10791 550f9a99b205d40e17e3c1fd13596629 "pdflatex"
+  "main.bbl" 1702221778 868 627572049669688df9a15777d8a20ab8 "bibtex main"
+  "main.out" 1702221806 7378 b848ca6ad02fbe8eb9aa0df8641007c5 "pdflatex"
   "main.tex" 1702191079 5127 aa5ce550584153281561355459bec736 ""
   "plugin_condition_nodes.drawio.png" 1701818390 610845 e5ecafa8737457f99efa0a943570dbe9 ""
-  "sub_appendix.tex" 1702018745 15422 baf2d116e99ecada3d00aa186bfc53fc ""
-  "sub_architecture.tex" 1702200138 19563 8c599e4044f0fc2e8789cdbf20829fc5 ""
+  "sub_appendix.tex" 1702200452 15428 9db993e6fb5da6cef094952a287e1ea1 ""
+  "sub_architecture.tex" 1702221776 19611 951cfd26983beccdd13efd21e68e3ed5 ""
   "sub_bylawscript.tex" 1702082257 4945 9fc7f7c2b9adb6a4219f7c649a731224 ""
   "sub_discussion.tex" 1702112374 2941 5142b51d9b143e850af56853202f8dd2 ""
   "sub_dividends.tex" 1701930996 3745 6b81d9e8649651e199a4cbb13ef3adc3 ""
   "sub_emergency.tex" 1701803235 2680 e6f66c2a7046800243808a8f784345ae ""
-  "sub_memberships.tex" 1701818390 4263 d7b23a183b00ad0804c3f03fdd9a579f ""
-  "sub_multi_token_system.tex" 1701818390 28561 89254dbcc0e8230d21e6819c44e21e17 ""
+  "sub_memberships.tex" 1702200452 4265 0be8f2900aa5eba3e9a29c79c9928184 ""
+  "sub_multi_token_system.tex" 1702200452 28565 6ef2fadc7bc4089ad57dfb4dcf3af71c ""
   "sub_plugins.tex" 1701996623 11018 61782a914acced307b7ac8f821fe86a9 ""
   "sub_principles.tex" 1702103451 11853 8ba33b41c14a0751bce27a1dca53f2f5 ""
   "sub_upgradablity.tex" 1701818390 5457 64bb7c6b9977fe78b2f9af6d85579c07 ""

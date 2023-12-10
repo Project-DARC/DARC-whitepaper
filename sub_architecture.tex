@@ -136,7 +136,9 @@ const plugin_Rule_1 =
     condition: (operation_name === BATCH_ADD_WITHDRAWABLE_BALANCE)
                & ( total_add_withdrawable_balance_up_to(10000000000000000000))
                & ( last_operation_by_operation_period_down_to(2592000)) 
-               & ( (operator_membership_level_equals(4)) | (operator_membership_level_equals(5)) ) ,
+               & ( (operator_membership_level_equals(4)) 
+                    | (operator_membership_level_equals(5)) 
+               ) ,
     returnType: YES_AND_SKIP_SANDBOX,
     bIsBeforeOperation: true,
     level: 100,
@@ -158,10 +160,10 @@ If all operations are approved and no sandbox check needed, the DARC will execut
 
 Each plugin is composed with following items:
 \begin{itemize}
-\item Return type: the decision of the plugin when the condition is triggered, including \texttt{YES}, \texttt{VOTE\_NEEDED}, \texttt{NO}, \texttt{YES\_AND\_SKIP\_SANDBOX} and \texttt{SANDBOX\_NEEDED}.
+\item Return type: the decision of the plugin when the condition is triggered, including \texttt{YES}, \texttt{VOTING\_NEEDED}, \texttt{NO}, \texttt{YES\_AND\_SKIP\_SANDBOX} and \texttt{SANDBOX\_NEEDED}.
 \item Level: the priority of current plugin when the condition is triggered. When an operation triggers multiple plugins, the plugin system will make the final decision with the return type from the plugin with the highest level. Since each level only allows plugins with the same return type, this will make sure that each operation will get a certain judgement result from the plugin system.
 \item Condition nodes: the \texttt{conditionNodes} is an array of condition nodes that represents the expression binary tree of this plugin. Each node can be a condition expression with parameters that validate a certain criteria, or a logical operators that combines two or multiple child nodes (condition expressions or logical operations) into a single condition expression. 
-\item Voting rule index: the index number that pointing to a certain voting rule if the condition expression criteria is triggered and the return type of the plugin is \texttt{VOTE\_NEEDED}. If a voting process is needed, the judgement system will traverse all \texttt{VOTE\_NEEDED} plugins and create a voting process with multiple items with selected voting rules.
+\item Voting rule index: the index number that pointing to a certain voting rule if the condition expression criteria is triggered and the return type of the plugin is \texttt{VOTING\_NEEDED}. If a voting process is needed, the judgement system will traverse all \texttt{VOTING\_NEEDED} plugins and create a voting process with multiple items with selected voting rules.
 \item Note: the notes by plugin designers for future purpose.
 \item Boolean flag \texttt{bIsEnabled}: the boolean flag that indicates if the plugin is enabled or not. Since the plugin is immutable in the whole life cycle, the operator cannot remove or modify the plugin after deployed successfully. The only way to disable a certain plugin is to set the boolean flag \texttt{bIsEnabled} from \texttt{True} to \texttt{False}. Also the plugin can be enabled by set it back to \texttt{True} if the operation is allowed.
 \item Boolean flag \texttt{bIsInitialized}: the boolean flag that indicates if the plugin is successfully initialized. If \texttt{False}, the judgement system will skip this plugin.
@@ -190,7 +192,7 @@ struct Plugin {
   ConditionNode[] conditionNodes;
 
   /**
-   * the voting rule id of the current plugin if the return type is VOTE_NEEDED
+   * the voting rule id of the current plugin if the return type is VOTING_NEEDED
    */
   uint256 votingRuleIndex;
 
