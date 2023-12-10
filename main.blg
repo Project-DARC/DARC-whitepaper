@@ -3,44 +3,47 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: alpha.bst
 Database file #1: sample.bib
-You've used 1 entry,
+Warning--empty journal in buterin2013ethereum
+Warning--empty year in buterin2013ethereum
+You've used 3 entries,
             2543 wiz_defined-function locations,
-            561 strings with 4554 characters,
-and the built_in function-call counts, 219 in all, are:
-= -- 17
-> -- 1
-< -- 0
-+ -- 0
-- -- 0
-* -- 11
-:= -- 30
-add.period$ -- 1
-call.type$ -- 1
-change.case$ -- 4
-chr.to.int$ -- 1
-cite$ -- 1
-duplicate$ -- 10
-empty$ -- 28
-format.name$ -- 0
-if$ -- 48
+            569 strings with 4749 characters,
+and the built_in function-call counts, 798 in all, are:
+= -- 72
+> -- 28
+< -- 1
++ -- 8
+- -- 8
+* -- 45
+:= -- 134
+add.period$ -- 6
+call.type$ -- 3
+change.case$ -- 14
+chr.to.int$ -- 3
+cite$ -- 5
+duplicate$ -- 37
+empty$ -- 68
+format.name$ -- 10
+if$ -- 160
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 6
-num.names$ -- 0
-pop$ -- 13
+missing$ -- 2
+newline$ -- 16
+num.names$ -- 6
+pop$ -- 28
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 18
 quote$ -- 0
-skip$ -- 11
+skip$ -- 31
 stack$ -- 0
-substring$ -- 7
-swap$ -- 1
-text.length$ -- 0
-text.prefix$ -- 1
+substring$ -- 21
+swap$ -- 2
+text.length$ -- 1
+text.prefix$ -- 2
 top$ -- 0
-type$ -- 8
-warning$ -- 0
-while$ -- 0
-width$ -- 2
-write$ -- 9
+type$ -- 24
+warning$ -- 2
+while$ -- 5
+width$ -- 5
+write$ -- 31
+(There were 2 warnings)

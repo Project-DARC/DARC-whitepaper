@@ -1,4 +1,14 @@
-\begin{thebibliography}{Ope}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{Jen16}
+
+\bibitem[B{\etalchar{+}}]{buterin2013ethereum}
+Vitalik Buterin et~al.
+\newblock Ethereum white paper.
+
+\bibitem[Jen16]{jentzsch2016decentralized}
+Christoph Jentzsch.
+\newblock Decentralized autonomous organization to automate governance.
+\newblock {\em White paper, November}, 2016.
 
 \bibitem[Ope]{proxy}
 ``Proxy Upgrade Pattern'', OpenZeppelin Docs,
