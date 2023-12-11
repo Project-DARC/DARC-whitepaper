@@ -28,7 +28,7 @@ To execute the program within the DARC protocol, the DARC Software Development K
 
 \subsection{Transpiler}
 
-After a user runs the By-law Script, the first step in the transpilation process involves converting the By-law Script into vanilla JavaScript. This initial transformation employs Babel.js \cite{githubGitHubBabelbabel} for front-end syntax analysis and utilizes an operator overloading plugin to generate the resulting vanilla JavaScript code on the back end.
+After a user runs the By-law Script, the first step in the transpilation process involves converting the By-law Script into vanilla JavaScript. This initial transformation employs Babel.js \cite{githubGitHubBabelbabel} for front-end syntax analysis and utilizes an operator overloading plugin to generate the resulting vanilla JavaScript code.
 
 The primary significance of using the operator overloading plugin lies in its ability to transpile the syntax of logical operators within condition nodes designed by the user. Users create plugins to logically connect and describe various condition expressions using logical operators. When these plugins are transpiled with the operator overloading feature, each condition within a plugin is transformed into a tree-like structure expressed as an object constructed using pure functions and parameters.
 
@@ -48,14 +48,7 @@ Once the program JSON body has been successfully generated, users can utilize et
 \caption{\label{fig:by-law-plugin}Transpiling and Code Generation for Plugins}
 \end{figure}
 
-Figure \ref{fig:by-law-plugin} illustrates a complete compilation process. The entire By-law Script toolchain first parses the By-law Script into an expression tree, transpiles it into vanilla JavaScript, and then, within the JavaScript runtime, the code generator of vanilla JavaScript produces a condition node array for plugins in a DARC Program. 
+Figure \ref{fig:by-law-plugin} illustrates a complete compilation process. 
 
-
-
-
-
-\begin{verbatim}
-transfer
-\end{verbatim}
 
 \end{document}

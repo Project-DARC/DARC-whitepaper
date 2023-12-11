@@ -133,9 +133,9 @@ Here is an example plugin for Rule 1 designed in By-law Script:
 \begin{verbatim}
 const plugin_Rule_1 = 
 {
-    condition: (operation_name === BATCH_ADD_WITHDRAWABLE_BALANCE)
-               & ( total_add_withdrawable_balance_up_to(10000000000000000000))
-               & ( last_operation_by_operation_period_down_to(2592000)) 
+    condition: (operation_equals(BATCH_ADD_WITHDRAWABLE_BALANCE))
+               & ( total_add_withdrawable_balance_LE(10000000000000000000))
+               & ( last_operation_by_operation_period_GE(2592000)) 
                & ( (operator_membership_level_equals(4)) 
                     | (operator_membership_level_equals(5)) 
                ) ,
