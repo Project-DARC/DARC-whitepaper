@@ -481,8 +481,7 @@ batch_add_and_enable_plugins([
 
 When we set both voting weight and dividend weight to 0, and forcefully require operators to mint tokens at a specific price, these tokens can be considered as product tokens representing paid products or services of the DARC instance.
 
-When we further restrict several levels of tokens to only allow pay-to-mint one token per transaction, and if there is already one token of that level, additional pay-to-mint transactions are not allowed. Simultaneously, we permit holders of these tokens to freely transfer them to other addresses, at this point, these level-specific tokens can be regarded as NFTs (Non-Fungible Tokens) \cite{ethereumERC721NonFungible}. NFTs can be used and considered as unique digital assets that represent ownership or proof of authenticity for specific items or content in the DARC protocol.
-
+When we further configure several levels of tokens to allow only one pay-to-mint one token per transaction, prohibit minting and burning operations, and disallow additional pay-to-mint transactions if one token of that level already exists. Simultaneously, we permit holders of these tokens to freely transfer them to other addresses, at this point, these level-specific tokens can be considered as NFTs (Non-Fungible Tokens) \cite{ethereumERC721NonFungible}. NFTs can be used and considered as unique digital assets that represent ownership or proof of authenticity for specific items or content in the DARC protocol.
 
 
 \end{document}

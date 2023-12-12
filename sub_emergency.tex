@@ -8,7 +8,7 @@ In the DARC protocol, users frequently encounter various issues, such as:
     \item Setting incorrect plugin parameters, triggering conditions, or performing erroneous token operations, rendering recovery impossible.
     \item Locking certain critical operations in the DARC protocol, resulting in the permanent unavailability of functionalities within the protocol.
     \item Human disputes leading to the organization's inability to operate, which cannot be resolved through plugins but may be addressed through manual litigation using documents, texts, evidence, etc.
-    \item Identifying vulnerabilities or facing attacks in the DARC protocol, necessitating an urgent pause and recovery of the protocol.
+    \item Identifying vulnerabilities or facing attacks in the DARC protocol, necessitating an urgent pause and recovery.
     \item Addressing other potential technical issues or disputes that may arise.
 \end{enumerate}
 
@@ -19,9 +19,7 @@ In the DARC protocol, users can designate one or more emergency agents for emerg
 
     \item \texttt{callEmergency(emergencyAgentAddress)}: This command is employed to invoke an emergency agent by specifying the address of the emergency agent to be called. Upon invocation, the emergency agent can take necessary emergency measures to address unforeseen situations and perform operations to ensure the normal functioning of the DARC.
 
-    \item \texttt{endEmergency()}: This command is utilized to conclude the emergency state. Once the emergency situation is resolved or addressed, users can use this command to end the emergency state and restore normal DARC protocol operations.
+    \item \texttt{endEmergency()}: This command is utilized to conclude the emergency state. Once the emergency situation is resolved or addressed, users and emergency agent can use this command to end the emergency state and restore normal DARC protocol operations.
 \end{enumerate}
-
-For the DARC protocol and emergency agents, issues such as problem resolution, parameter modifications, asset transfers, evidence acquisition methods, and payment for service fees are not discussed in this document. These aspects constitute the core topics of discussions between the DARC protocol's key stakeholders, executives, and emergency agents.
 
 \end{document}

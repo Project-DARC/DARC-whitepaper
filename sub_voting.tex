@@ -27,8 +27,7 @@ Each voting rule is composed with following items:
     \item Approval threshold percentage: the approval threshold in percentage. 
     \item Boolean flag \texttt{bIsAbsoluteMajority}: a boolean flag that indicates if the voting mode is by absolute majority or relative majority.
     \item Voting duration(in seconds): the maximum duration for this voting process in seconds. If the voting process takes more time than this parameter, the voting process will be terminated and the vote result will be set as failure.
-    \item Executing pending duration(in seconds): the maximum duration for the operator to execute an approved program after a voting process finishes. If the program is approved, the operator must execute this program in a certain period of time, otherwise the program will be aborted and the DARC will be reset to idle state.
-    \item Boolean flag \texttt{isForceStopAllowed}: If this flag is set as \texttt{True}, some operators can stop this voting process manually.
+    \item Executing pending duration(in seconds): the maximum duration for the operator to execute an approved program after a voting process finishes in seconds. If the program is approved, the operator must execute this program before the defined duration ends; otherwise, the program will be aborted, and the DARC will be reset to the idle state.
     \item Boolean flag \texttt{isEnabled}: a boolean flag that must be set as \texttt{True} if the voting rule is initialized and enabled successfully.
     \item Note: a string stored in the voting rule with extra information, comments or external URLs about this voting rule.
 \end{itemize}
@@ -57,11 +56,6 @@ struct VotingRule {
   uint256 executionPendingDurationInSeconds;
 
   /**
-   *  the forced stop during the voting duration is allowed or not
-   */
-  bool isForcedStopAllowed;
-
-  /**
    * the voting policy is enabled or not
    */
   bool isEnabled;
@@ -84,17 +78,17 @@ struct VotingRule {
 Typically, in the voting system of DARC protocol, there are two types of voting methods:
 
 \begin{itemize}
-    \item Absolute Majority: In absolute majority, the approval of a vote requires reaching a fixed threshold. Expressed as a percentage of the total voting weight, if the total weight of approval votes exceeds a predetermined threshold, the vote is considered passed. For example, with a total weight of 1000 and a threshold set at 70\%, the vote is deemed successful only if the total weight of approval votes exceeds 700.
+    \item Absolute Majority: In absolute majority voting, approval requires surpassing a fixed threshold, expressed as a percentage of the total voting weight. If the combined weight of approval votes exceeds a predetermined threshold, the vote is considered successful. For example, with a total weight of 1000 and a threshold set at 70\%, the vote is deemed successful if the total weight of approval votes exceeds 700.
 
-    \item Relative Majority: In relative majority, the approval of a vote is relative to the percentage of the total voting weight. In this case, the total voting weight can be a percentage of the actual cast votes, rather than a predefined absolute value. For instance, if the total weight is 1000 but only 300 weight is cast in the vote, relative majority requires that the approved vote weight exceeds 70\% of the cast votes (0.7 * 300 = 210) for the vote to be considered successful.
+    \item Relative Majority: In relative majority voting, approval is relative to the percentage of the total voting weight. Unlike absolute majority, the total voting weight is a percentage of the actual cast votes rather than a predefined absolute value. For instance, if the total weight is 1000 but only 300 weight is cast in the vote, relative majority requires the approved vote weight to exceed 70\% of the cast votes (0.7 * 300 = 210) for the vote to be considered successful.
 \end{itemize}
 
 
 We present the options of ``absolute majority'' and ``relative majority'' in voting due to the distinct emphases these two modes offer when balancing the outcomes of the vote.
 
-With regards to the Absolute Majority, its advantage is that the approved voting weight only needs to constitute a proportion of the total possible vote, offering more flexibility. It is applicable in situations where a significant majority is sufficient to determine the outcome in order to promote broader consensus. Its application scenario is suitable for important decisions where it is crucial to secure support from a substantial majority. Using an absolute majority as the criterion serves to promote broader consensus.
+With regards to the absolute majority, its advantage is that the approved voting weight only needs to constitute a proportion of the total possible vote, offering more flexibility. It is applicable in situations where a significant majority is sufficient to determine the outcome in order to promote broader consensus. Its application scenario is suitable for important decisions where it is crucial to secure support from a substantial majority. Using an absolute majority as the criterion serves to promote broader consensus.
 
-As for the Relative Majority, its advantage is that the approved voting weight simply needs to constitute the largest share of the current vote, providing greater expediency and flexibility. It is thus applicable in situations where a relative majority is sufficient to determine the outcome. Its application scenario is suited for scenarios where a more flexible and expedited decision-making process is required. A relative majority can achieve consensus more quickly without needing to secure a fixed percentage of the total possible voting weight.
+In contrast, relative majority offers the advantage that the approved voting weight merely needs to constitute the largest share of the current vote, providing enhanced expediency and flexibility. This approach is applicable in scenarios where a relative majority is adequate to determine the outcome. Its suitability extends to situations where a more flexible and expedited decision-making process is necessary. Relative majority facilitates achieving consensus more promptly without the need to secure a fixed percentage of the total possible voting weight.
 
 By providing both absolute and relative majority options, we enhance the adaptability of voting rules to serve the diverse governance needs of various protocols and organizations. Opting for the appropriate voting mode facilitates better fulfilling the consensus and efficiency requirements of particular decision scenarios.
 
@@ -103,7 +97,7 @@ By providing both absolute and relative majority options, we enhance the adaptab
 For each program, after receiving approval from the before-operation plugin and completing its full execution within the sandbox, the judgment system, guided by all after-operation plugins, evaluates each operation. If the judgments from all plugins at the highest level for a particular operation are marked as ``VOTING\_NEEDED'', all the voting rules associated with that plugin are collected. Once the judgment system has compiled all the voting rules corresponding to each operation within the program, it generates a voting item array, assigning each rule to its respective entry.
 
 
-For each operation, there may be one or more distinct plugins simultaneously triggered, all having a return type of ``VOTING\_NEEDED''. In such cases, the voting rules associated with each plugin pointing to that operation will be gathered in order. On the other hand, for each program, different operations may be successively triggered by the same plugins. In the voting item array, a new voting item will be generated for each operation, pointing to the respective voting rule.
+For each operation, there may be one or more distinct plugins simultaneously triggered, all having a return type of ``VOTING\_NEEDED''. In such cases, the voting rules associated with each plugin pointing to that operation will be gathered in order. On the other hand, for each program, different operations may be successively triggered by the same plugins. In the voting item array, a new voting item will be generated for each operation from corresponding voting rule.
 
 Figure \ref{fig:voting_item} is an example illustrating how the DARC protocol initializes a voting item array based on judgment results.
 
@@ -116,13 +110,13 @@ Figure \ref{fig:voting_item} is an example illustrating how the DARC protocol in
 
 Once a voting item array is initialized, as a finite state machine, the DARC protocol transitions into the voting state. Assuming there are N voting items in the voting item array, all operators will be allowed to cast their votes, submitting a boolean array of length N. Each boolean value represents the operator's support or opposition to the corresponding voting item. For each operator, in every voting state, they can and must vote only once, ensuring that the parameter in the vote operation is a boolean array of length N. If an operator attempts to execute a vote operation more than once or provides a boolean array of a length other than N, the voting program will be automatically rejected.
 
-In the DARC protocol, each voting item has two counters: one for ``YES'' votes and another for ``NO'' votes. Whenever an operator performs a valid voting operation, each voting item calculates the total voting weight of that operator in the corresponding voting rule. In a given voting item, each voting rule defines a set of allowed token levels \(C = [c_1, c_2, ..., c_n]\), where \(n\) is the number of token levels. Each token level \(c_i\) has a corresponding voting weight denoted as \(v_i\). Suppose during the voting process, an operator chooses to vote on this voting item, the operator's voting weight \(W\) is calculated by the following formula:
+In the DARC protocol, each voting item has two counters: one for ``YES'' votes and another for ``NO'' votes. Whenever an operator performs a valid voting operation, each voting item calculates the total voting weight of that operator in the corresponding voting rule. In a given voting item, each voting rule defines a set of allowed token levels \(C = [c_1, c_2, ..., c_n]\), where \(n\) is the number of token levels. Each token level \(c_i\) has a corresponding voting weight denoted as \(w_i\). Suppose during the voting process, an operator chooses to vote on this voting item, the operator's voting weight \(W\) is calculated by the following formula:
 
 \[
 W = \sum_{i=1}^{n} w_i v_i
 \]
 
-In this formula, \(W\) represents the total voting weight of the operator for this voting item, and the summation goes through all token levels \(c_i\) allowed for voting. For each level \(i\), \(v_i\) is the quantity of tokens at that level, and \(w_i\) is the corresponding voting weight for level \(i\).
+In this formula, \(W\) represents the total voting weight of the operator for this voting item, and the summation goes through all token levels \(c_i\) allowed for voting. For each level \(i\), \(v_i\) is the quantity of tokens owned by this operator at that level.
 
 After each operator submits a valid vote operation, each voting item will increment the corresponding voting weight into the YES or NO counters. If the operator holds zero tokens in the votable token set for a particular voting item, neither the YES nor NO counters will be affected. Upon the completion of the voting process, the DARC protocol will determine whether the voting has concluded based on the following criteria:
 

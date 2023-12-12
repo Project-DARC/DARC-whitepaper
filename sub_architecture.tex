@@ -3,7 +3,7 @@
 \section{DARC Architecture}
 
 
-The DARC is a virtual machine built with Solidity programming language \cite{soliditylangSolidityx2014}, and can be compiled and deployed to any EVM-compatible on local devnet, testnet or mainnet without contract code size limit(EIP-170). After the DARC protocol is successfully compiled and deployed to your blockchain, user can compose a program and send it to your DARC virtual machine using darc.js(the official Node.js SDK for deploying and interacting with your DARC) or ethers.js \cite{ethersDocumentation} with corresponding DARC Application Binary Interface(ABI). User can also read data and information from the deployed DARC in this way.
+The DARC is a virtual machine built with Solidity programming language \cite{soliditylangSolidityx2014}, and can be compiled and deployed to any EVM-compatible on local devnet, testnet or mainnet without contract code size limit(EIP-170) \cite{ethereumEIP170Contract}. After the DARC protocol is successfully compiled and deployed to your blockchain, user can compose a program and send it to your DARC virtual machine using darc.js(the official Node.js SDK for deploying and interacting with your DARC) or ethers.js \cite{ethersDocumentation} with corresponding DARC Application Binary Interface(ABI). User can also read data and information from the deployed DARC in this way.
 
 Figure \ref{fig:architecture} shows the overview of the DARC protocol. 
 
@@ -133,17 +133,19 @@ Here is an example plugin for Rule 1 designed in By-law Script:
 \begin{verbatim}
 const plugin_Rule_1 = 
 {
-    condition: (operation_equals(BATCH_ADD_WITHDRAWABLE_BALANCE))
-               & ( total_add_withdrawable_balance_LE(10000000000000000000))
-               & ( last_operation_by_operation_period_GE(2592000)) 
-               & ( (operator_membership_level_equals(4)) 
-                    | (operator_membership_level_equals(5)) 
-               ) ,
+    condition: operation_equals(BATCH_ADD_WITHDRAWABLE_BALANCE)
+    & total_add_withdrawable_balance_LE(10000000000000000000)
+    & last_operation_by_operation_period_for_operator_GE(
+        BATCH_ADD_WITHDRAWABLE_BALANCE, 2592000
+      )
+    & ( (operator_membership_level_equals(4)) 
+         | (operator_membership_level_equals(5)) 
+    ) ,
     returnType: YES_AND_SKIP_SANDBOX,
     bIsBeforeOperation: true,
     level: 100,
     votingRuleIndex: 0,
-    note: "Rule 1"
+    note: ""
 }
 \end{verbatim}
 

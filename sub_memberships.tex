@@ -3,7 +3,7 @@
 
 \section{Memberships}
 
-In every company, in addition to members such as the board of directors, shareholders, executives, there are also numerous employees, contractors, interns, customers, suppliers, and so on. They may not hold any first-level tokens or company shares, but their payroll, orders, subscription fees, and other functionalities require bulk management. Therefore, membership is another set of convenient tools for use in the DARC protocol.
+In every company, in addition to members such as the board of directors, shareholders, executives, there are also numerous employees, contractors, interns, customers, suppliers, and so on. They may not hold any first-level tokens or company shares, but their payroll, orders, subscription fees, and other functionalities require batch management. Therefore, membership is another set of convenient tools for use in the DARC protocol.
 
 
 
@@ -58,10 +58,10 @@ Here is an example plugin for \textbf{Rule 1} designed in By-law Script:
 \begin{verbatim}
 const plugin_Rule_1 = 
 {
-    condition: (operation_name === BATCH_TRANSFER_TOKENS)
-               & ( transfer_token_level === 0 )
-               & ( transfer_token_amount > 100000) 
-               & ( operator_membership_level === 1) ,
+    condition: (operation_name_euqlas(BATCH_TRANSFER_TOKENS))
+               & ( transfer_token_level_equals(0) )
+               & ( transfer_token_amount_greater(100000)) 
+               & ( operator_membership_level_equals(1)) ,
     return_type: VOTING_NEEDED,
     is_before_operation: false,
     return_level: 100,
@@ -76,14 +76,19 @@ Here is an example plugin for \textbf{Rule 2} designed in By-law Script:
 \begin{verbatim}
 const plugin_Rule_2 = 
 {
-    condition: (operation_name === BATCH_ADD_WITHDRAWABLE_BALANCE)
-               & ( total_add_withdrawable_balance <= 10000000000000000000)
-               & ( last_operation_by_operation_period >= 2592000) 
-               & ( (operator_membership_level === 4) | (operator_membership_level === 5) ) ,
-    return_type: YES_AND_SKIP_SANDBOX,
-    is_before_operation: true,
-    return_level: 100,
-    voting_rule_index: 0
+    condition: operation_equals(BATCH_ADD_WITHDRAWABLE_BALANCE)
+    & total_add_withdrawable_balance_LE(10000000000000000000)
+    & last_operation_by_operation_period_for_operator_GE(
+        BATCH_ADD_WITHDRAWABLE_BALANCE, 2592000
+      )
+    & ( (operator_membership_level_equals(4)) 
+         | (operator_membership_level_equals(5)) 
+    ) ,
+    returnType: YES_AND_SKIP_SANDBOX,
+    bIsBeforeOperation: true,
+    level: 100,
+    votingRuleIndex: 0,
+    note: ""
 }
 \end{verbatim}
 

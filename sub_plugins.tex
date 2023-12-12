@@ -5,7 +5,7 @@
 
 \subsection{Design of Plugins}
 
-Plugin is the law in the DARC Protocol, and all programs and operations within DARC must adhere to the restrictions imposed by all plugins. For an individual plugin, it is required to follow the logic outlined in the pseudo code below:
+Plugin is the law in the DARC Protocol, and all programs and operations within DARC must adhere to the restrictions imposed by all plugins. For an individual plugin, it follows the logic outlined in the pseudo code below:
 
 \begin{verbatim}
 if plugin.condition:
@@ -17,7 +17,7 @@ For the DARC protocol, the main difference between before-operation plugins and 
 \begin{enumerate}
     \item \texttt{NO}. When the condition of a before-operation plugin is triggered, the plugin's decision for that operation is \texttt{NO}. This decision indicates that the plugin believes the operation violates its rules, and therefore, it is rejected outright before entering the sandbox for execution.
 
-    \item \texttt{SANDBOX\_NEEDED}.   When the condition of a before-operation plugin is triggered, the plugin's decision for that operation is \texttt{SANDBOX\_NEEDED}. This decision indicates that the plugin cannot determine whether the operation should be accepted or rejected. The plugin is aware that the operation needs to be evaluated in the sandbox by after-operation plugins, and thus, the decision is made to let the operation proceed to the sandbox for further evaluation.
+    \item \texttt{SANDBOX\_NEEDED}. When the condition of a before-operation plugin is triggered, the plugin's decision for that operation is \texttt{SANDBOX\_NEEDED}. This decision indicates that the plugin cannot determine whether the operation should be accepted or rejected. The plugin is aware that the operation needs to be evaluated in the sandbox by after-operation plugins, and thus, the decision is made to let the operation proceed to the sandbox for further evaluation.
 
     \item \texttt{YES\_AND\_SKIP\_SANDBOX}. When the condition of a before-operation plugin is triggered, the plugin's decision for that operation is \texttt{YES\_AND\_SKIP\_SANDBOX}. This decision indicates that the plugin has determined that the operation should be approved and does not require execution in the sandbox. Therefore, the operation can proceed directly without going through the sandbox.
 \end{enumerate}
@@ -54,9 +54,9 @@ Figure \ref{fig:condition-nodes} is an example illustrating how a condition expr
 \caption{\label{fig:condition-nodes}Condition Nodes and Expression Tree}
 \end{figure}
 
-Additionally, a plugin needs to set two parameters: one is the 'level', representing the priority of the plugin within the entire plugin system. For the same operation, the judgment system traverses all plugins, and it is possible that at least two or more plugins are triggered. In such cases, if the levels of the plugins are different, the judgment system will consider the plugin with the higher level as the final determination.
+Additionally, a plugin needs to set two parameters: one is the ``level'', representing the priority of the plugin within the entire plugin system. For the same operation, the judgment system traverses all plugins, and it is possible that at least two or more plugins are triggered. In such cases, if the levels of the plugins are different, the judgment system will consider the plugin with the higher level as the final determination.
 
-The other parameter is the 'voting rule index,' which points to a specific index in the voting rule array. When the final decision of a plugin is \texttt{VOTING\_NEEDED}, the plugin automatically requests the DARC protocol to use the voting rule indicated by the voting rule index for initializing the voting item. If the return type of the plugin is not \texttt{VOTING\_NEEDED}, the voting rule index will be ignored.
+The other parameter is the ``voting rule index'', which points to a specific index in the voting rule array. When the final decision of a plugin is \texttt{VOTING\_NEEDED}, the plugin requests the DARC protocol to use the voting rule indicated by the voting rule index for initializing the voting item. If the return type of the plugin is not \texttt{VOTING\_NEEDED}, the voting rule index will be ignored.
 
 
 
@@ -66,12 +66,12 @@ For the DARC protocol, the judgment system needs to undergo two assessments: one
 
 For example, in a DARC instance where shareholder X is required to permanently hold 15\% voting rights and 10\% dividend rights, when designing a plugin, it is impossible to predict the state of the DARC instance after the execution of operations like mint tokens or burn tokens. This uncertainty poses challenges in ensuring that shareholder X maintains permanent ownership of 15\% voting rights and 10\% dividend rights. Only by running the operation in the sandbox and then re-evaluating the state of the sandbox, can such modifications be prevented.
 
-In another scenario, if there is a need to ensure that a DARC instance reserves 10,000 native tokens permanently before January 1, 2035, the correct detection and prevention of operations such as paying dividends or withdrawing cash can only be guaranteed by executing these operations in the sandbox. After all operations are completed in the sandbox, the judgment system performs a second evaluation through after-operation plugins. Without a sandbox and relying solely on plugins, the design of such a mechanism would be overly complex.
+In another scenario, if there is a need to ensure that a DARC instance reserves 10000 native tokens permanently before January 1, 2035, the correct detection and prevention of operations such as paying dividends or withdrawing cash can only be guaranteed by executing these operations in the sandbox. After all operations are completed in the sandbox, the judgment system performs a second evaluation through after-operation plugins. Without a sandbox and relying solely on plugins, the design of such a mechanism would be overly complex.
 
 
-If there are only after-operation plugins and a sandbox without before-operation plugins, it would not be feasible. This is because the running cost of the sandbox is very high. It not only requires the program to run completely in the sandbox but also involves initializing the sandbox by fully replicating the internal state of the entire DARC instance. This process incurs a significant amount of gas fees.
+If there are only after-operation plugins and a sandbox without before-operation plugins, it would be expensive and inefficient. This is because the running cost of the sandbox is very high. It not only requires the program to run completely in the sandbox but also involves initializing the sandbox by fully replicating the internal state of the entire DARC instance. This process incurs a significant amount of gas fees.
 
-For the majority of simple operations that can be approved without the need for running in the sandbox, it is more cost-effective to have rules established directly in before-operation plugins. These rules can leverage factors such as the operation, operator, timestamp, etc., for a straightforward approval or rejection, preventing them from entering the sandbox and saving costs.
+For the majority of simple operations that can be approved without the need for running in the sandbox, it is more cost-effective to have rules established directly in before-operation plugins. For example, the trading of shares between small shareholders and retail investors, customers engaging in daily transactions, board members executing routine payment operations, and employees issuing salaries and stock incentives to themselves—these numerous daily and high-frequency activities can be defined as before-operation plugins. This approach helps to save gas fees for the vast majority of daily operations.
 
 
 
@@ -93,15 +93,7 @@ For before-operation plugins, whenever a program is submitted to the DARC protoc
 \end{figure}
 
 
-Figure \ref{fig:judgement-before-op} illustrates how individual operations within a program are judged by before-operation plugins, resulting in judgment outcomes.
-
-
-
-
-
-
-
-For after-operation plugins, once a program has completed its full execution in the sandbox, the judgment system sequentially examines each operation. For each operation, the judgment system traverses each after-operation plugin, obtaining an individual judgment result. Ultimately, the results for all operations are aggregated to determine the final program result, deciding whether the program needs approval through voting (\texttt{VOTING\_NEEDED}), should be rejected outright (\texttt{NO}), or can proceed directly (\texttt{YES}). The following rules apply to after-operation judgment:
+Figure \ref{fig:judgement-before-op} illustrates how individual operations within a program are judged by before-operation plugins, resulting in judgment outcomes, deciding whether the program needs approval through voting (\texttt{VOTING\_NEEDED}), should be rejected outright (\texttt{NO}), or can proceed directly (\texttt{YES}). The following rules apply to after-operation judgment:
 
 \begin{enumerate}
     \item If any operation is judged by the judgment system as \texttt{NO}, the entire program is rejected with a result of \texttt{NO}.
@@ -116,7 +108,7 @@ For after-operation plugins, once a program has completed its full execution in 
     \caption{\label{fig:judgement-after-op}Judgement on program with after-operation plugins}
 \end{figure}
 
-Figure \ref{fig:judgement-before-op} illustrates how individual operations within a program are judged by after-operation plugins, resulting in judgment outcomes.
+Figure \ref{fig:judgement-after-op} illustrates how individual operations within a program are judged by after-operation plugins, resulting in judgment outcomes.
 
 
 

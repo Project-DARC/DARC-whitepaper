@@ -15,14 +15,14 @@ For each user, assuming that the sum of dividend weights from various token leve
 
 For the DARC protocol, three dividend distribution methods can be employed:
 
-Dividend based on the Number of Dividendable Transactions:
-The first approach involves distributing dividends based on the quantity of dividendable transactions. This is achieved by setting the dividend transaction cycle counter, $N$, to a reasonable value. Upon receiving at least $N$ dividendable transactions, the instruction \texttt{OFFER\_DIVIDENDS} becomes executable. Upon execution, the dividendable fund pool and dividendable transaction cycle counter are reset to zero, initiating a new count. This process repeats, waiting for the next N transactions and subsequent dividend distribution operation.
+Transaction-Based Dividend Distribution:
+The first approach involves distributing dividends based on the quantity of dividendable transactions. This is achieved by setting the dividend transaction cycle counter, $N$, to a reasonable value. Upon receiving at least $N$ dividendable transactions, the instruction \texttt{OFFER\_DIVIDENDS} becomes executable. Upon execution, the dividendable fund pool and dividendable transaction cycle counter are reset to zero, initiating a new count. This process repeats, waiting for the next $N$ transactions and subsequent dividend distribution operation.
 
 Time-Based Dividend Distribution:
-The second method entails dividend distribution based on time. Setting N to 1, an additional plugin can be introduced, allowing \texttt{OFFER\_DIVIDENDS} to be invoked no less than S seconds after the previous call within the entire DARC instance. In this manner, dividends can be scheduled every 2 weeks, 4 weeks, 3 months, 6 months, or 1 year. This approach aligns more closely with traditional corporate dividends.
+The second method entails dividend distribution based on time. Setting $N$ to 1, an additional plugin can be introduced, allowing \texttt{OFFER\_DIVIDENDS} to be invoked no less than S seconds after the previous call within the entire DARC instance. In this manner, dividends can be scheduled every 2 weeks, 4 weeks, 3 months, 6 months, or 1 year. This approach aligns more closely with traditional corporate dividends.
 
-Dividend Distribution Based on the Total Amount in the Dividendable Fund Pool:
-The third method involves distributing dividends based on the total amount in the dividendable fund pool. With $N$ set uniquely, an additional plugin enables the execution of \texttt{OFFER\_DIVIDENDS} whenever the amount in the dividendable fund pool exceeds a specified threshold. Following this design, a dividend distribution can be triggered after obtaining $Y$ dividendable native tokens.
+Fund-Pool-Based Dividend Distribution:
+The third method involves distributing dividends based on the total amount in the dividendable fund pool. Setting $N$ to 1, an additional plugin enables the execution of \texttt{OFFER\_DIVIDENDS} whenever the amount in the dividendable fund pool exceeds a specified threshold. Following this design, a dividend distribution can be triggered after obtaining $Y$ dividendable native tokens.
 
 Users can choose any of the above methods or design plugins to create alternative, practical, and rational dividend distribution patterns based on different DARC organizational structures and methods.
 
