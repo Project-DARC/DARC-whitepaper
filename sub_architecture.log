@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.20)  10 DEC 2023 09:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.20)  11 DEC 2023 14:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -667,6 +667,9 @@ Package hyperref Info: Link coloring ON on input line 2.
 LaTeX Warning: Citation `soliditylangSolidityx2014' on page 1 undefined on input line 6.
 
 
+LaTeX Warning: Citation `ethereumEIP170Contract' on page 1 undefined on input line 6.
+
+
 LaTeX Warning: Citation `ethersDocumentation' on page 1 undefined on input line 6.
 
 <architecture.png, id=72, 1566.85374pt x 743.77875pt>
@@ -693,7 +696,7 @@ Overfull \hbox (26.34134pt too wide) in paragraph at lines 118--119
  []
 
 [5]
-Overfull \hbox (18.53476pt too wide) in paragraph at lines 163--164
+Overfull \hbox (18.53476pt too wide) in paragraph at lines 165--166
 []\OT1/cmr/m/n/10 Return type: the de-ci-sion of the plu-gin when the con-di-tion is trig-gered, in-clud-ing \OT1/cmtt/m/n/10 YES\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 VOTING[]NEEDED\OT1/cmr/m/n/10 ,
  []
 
@@ -702,7 +705,7 @@ Overfull \hbox (18.53476pt too wide) in paragraph at lines 163--164
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `sub_architecture.out' has not changed.
-(rerunfilecheck)             Checksum: 6091DF6F61C624D6EA9A7A5CA11437AA;2329.
+(rerunfilecheck)             Checksum: 60DDA7B2E110AD7543D785E47ADFC289;2324.
  ) 
 Here is how much of TeX's memory you used:
  23490 strings out of 477678
@@ -713,7 +716,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  119i,6n,120p,980b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on sub_architecture.pdf (8 pages, 396106 bytes).
+Output written on sub_architecture.pdf (8 pages, 396112 bytes).
 PDF statistics:
  153 PDF objects out of 1000 (max. 8388607)
  127 compressed objects within 2 object streams

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.20)  10 DEC 2023 09:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.20)  11 DEC 2023 19:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -861,13 +861,13 @@ au-tonomous or-ga-ni-za-tions (DAOs)[[]]
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 ) (./sub_architecture.tex
-<architecture.png, id=248, 1566.85374pt x 743.77875pt>
+<architecture.png, id=249, 1566.85374pt x 743.77875pt>
 File: architecture.png Graphic file (type png)
 <use architecture.png>
 Package pdftex.def Info: architecture.png  used on input line 12.
 (pdftex.def)             Requested size: 443.57848pt x 210.5605pt.
  [4] [5 <./architecture.png>]
-<execution_flow.drawio.png, id=263, 2413.015pt x 3456.915pt>
+<execution_flow.drawio.png, id=265, 2413.015pt x 3456.915pt>
 File: execution_flow.drawio.png Graphic file (type png)
 <use execution_flow.drawio.png>
 Package pdftex.def Info: execution_flow.drawio.png  used on input line 56.
@@ -886,20 +886,20 @@ s, the op-er-a-tor can ex-e-cute \OT1/cmtt/m/n/10 WITHDRAW[]CASH[]TO
  []
 
 [9]
-Overfull \hbox (18.53476pt too wide) in paragraph at lines 163--164
+Overfull \hbox (18.53476pt too wide) in paragraph at lines 165--166
 []\OT1/cmr/m/n/10 Return type: the de-ci-sion of the plu-gin when the con-di-ti
 on is trig-gered, in-clud-ing \OT1/cmtt/m/n/10 YES\OT1/cmr/m/n/10 , \OT1/cmtt/m
 /n/10 VOTING[]NEEDED\OT1/cmr/m/n/10 ,
  []
 
 [10]) (./sub_bylawscript.tex [11]
-<by-law.drawio.large.png, id=293, 6835.5375pt x 4326.1625pt>
+<by-law.drawio.large.png, id=296, 6835.5375pt x 4326.1625pt>
 File: by-law.drawio.large.png Graphic file (type png)
 <use by-law.drawio.large.png>
 Package pdftex.def Info: by-law.drawio.large.png  used on input line 24.
 (pdftex.def)             Requested size: 443.57848pt x 280.68234pt.
  [12 <./by-law.drawio.large.png>]
-<by-law-script-process.drawio.png, id=300, 3517.14pt x 5223.515pt>
+<by-law-script-process.drawio.png, id=304, 3517.14pt x 5223.515pt>
 File: by-law-script-process.drawio.png Graphic file (type png)
 <use by-law-script-process.drawio.png>
 Package pdftex.def Info: by-law-script-process.drawio.png  used on input line 4
@@ -911,7 +911,7 @@ LaTeX Warning: Float too large for page by 1.54166pt on input line 49.
 
 ) (./sub_multi_token_system.tex [13] [14 <./by-law-script-process.drawio.png>]
 [15] [16] [17] [18] [19] [20] [21] [22] [23]) (./sub_plugins.tex [24]
-<plugin_condition_nodes.drawio.png, id=364, 3256.165pt x 3697.815pt>
+<plugin_condition_nodes.drawio.png, id=374, 3256.165pt x 3697.815pt>
 File: plugin_condition_nodes.drawio.png Graphic file (type png)
 <use plugin_condition_nodes.drawio.png>
 Package pdftex.def Info: plugin_condition_nodes.drawio.png  used on input line 
@@ -919,50 +919,41 @@ Package pdftex.def Info: plugin_condition_nodes.drawio.png  used on input line
 (pdftex.def)             Requested size: 443.57848pt x 503.69742pt.
  [25]
 [26 <./plugin_condition_nodes.drawio.png>]
-<judgement_plugin_levels_before_ops.drawio.png, id=382, 5705.315pt x 4577.1pt>
+<judgement_plugin_levels_before_ops.drawio.png, id=389, 5705.315pt x 4577.1pt>
 File: judgement_plugin_levels_before_ops.drawio.png Graphic file (type png)
 <use judgement_plugin_levels_before_ops.drawio.png>
 Package pdftex.def Info: judgement_plugin_levels_before_ops.drawio.png  used on
  input line 91.
 (pdftex.def)             Requested size: 443.57848pt x 355.83904pt.
  [27 <./judgement_plugin_levels_before_ops.drawio.png>]
-<judgement_plugin_levels_after_ops.drawio.png, id=393, 5705.315pt x 4577.1pt>
+<judgement_plugin_levels_after_ops.drawio.png, id=402, 5705.315pt x 4577.1pt>
 File: judgement_plugin_levels_after_ops.drawio.png Graphic file (type png)
 <use judgement_plugin_levels_after_ops.drawio.png>
 Package pdftex.def Info: judgement_plugin_levels_after_ops.drawio.png  used on 
-input line 115.
+input line 107.
 (pdftex.def)             Requested size: 443.57848pt x 355.83904pt.
 ) (./sub_voting.tex [28 <./judgement_plugin_levels_after_ops.drawio.png>]
-<finite_state_machine.drawio.large.png, id=406, 5430.2875pt x 3723.9125pt>
+<finite_state_machine.drawio.large.png, id=413, 5430.2875pt x 3723.9125pt>
 File: finite_state_machine.drawio.large.png Graphic file (type png)
 <use finite_state_machine.drawio.large.png>
 Package pdftex.def Info: finite_state_machine.drawio.large.png  used on input l
 ine 18.
 (pdftex.def)             Requested size: 443.57848pt x 304.16954pt.
  [29 <./finite_state_machine.drawio.large.png>] [30]
-<voting_item.drawio.png, id=417, 2934.965pt x 2011.515pt>
+<voting_item.drawio.png, id=424, 2934.965pt x 2011.515pt>
 File: voting_item.drawio.png Graphic file (type png)
 <use voting_item.drawio.png>
-Package pdftex.def Info: voting_item.drawio.png  used on input line 112.
+Package pdftex.def Info: voting_item.drawio.png  used on input line 106.
 (pdftex.def)             Requested size: 443.57848pt x 303.98553pt.
- [31] [32 <./voting_item.drawio.png>]) (./sub_memberships.tex
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[33]
-Overfull \hbox (39.41731pt too wide) in paragraph at lines 88--88
-[]               \OT1/cmtt/m/n/10 & ( (operator_membership_level === 4) | (oper
-ator_membership_level === 5) ) ,[] 
- []
-
-) (./sub_dividends.tex [34]) (./sub_emergency.tex [35]) (./sub_upgradablity.tex
-[36]
-<upgradability.drawio.png, id=465, 3533.2pt x 4219.765pt>
+ [31] [32 <./voting_item.drawio.png>]) (./sub_memberships.tex [33]) (./sub_divi
+dends.tex
+[34]) (./sub_emergency.tex [35]) (./sub_upgradablity.tex [36]
+<upgradability.drawio.png, id=475, 3533.2pt x 4219.765pt>
 File: upgradability.drawio.png Graphic file (type png)
 <use upgradability.drawio.png>
 Package pdftex.def Info: upgradability.drawio.png  used on input line 38.
 (pdftex.def)             Requested size: 443.57848pt x 529.72293pt.
-<upgradablity-multi.drawio.png, id=467, 5062.915pt x 7873.415pt>
+<upgradablity-multi.drawio.png, id=477, 5062.915pt x 7873.415pt>
 File: upgradablity-multi.drawio.png Graphic file (type png)
 <use upgradablity-multi.drawio.png>
 Package pdftex.def Info: upgradablity-multi.drawio.png  used on input line 62.
@@ -973,11 +964,11 @@ LaTeX Warning: Float too large for page by 32.5005pt on input line 64.
 
 ) (./sub_discussion.tex [37] [38 <./upgradability.drawio.png>] [39 <./upgradabl
 ity-multi.drawio.png>]) (./main.bbl
-! You can't use `macro parameter character #' in horizontal mode.
-l.23 {S}olidity \&#
-                   x2014; {S}olidity 0.8.23 documentation --- docs.solidityl...
+Underfull \hbox (badness 10000) in paragraph at lines 39--42
+[]\OT1/cmr/m/n/10 Solidity So-lid-ity 0.8.23 doc-u-men-ta-tion --- docs.solidit
+ylang.org.  [][]$\OT1/cmtt/m/n/10 https : / / docs .
+ []
 
-? 
 ) (./sub_appendix.tex
 Overfull \hbox (23.66745pt too wide) in paragraph at lines 333--333
 [][] [] [] \OT1/cmtt/m/n/10 *[] @param[] ADDRESS_2DARRAY[0][] address[][] toAdd
@@ -996,13 +987,13 @@ Overfull \hbox (28.9174pt too wide) in paragraph at lines 333--333
 tArray:[] the[] array[] of[] the[] amount[] of[] the[] token[]
  []
 
-[40]
+
 Overfull \hbox (13.16754pt too wide) in paragraph at lines 333--333
 [][] [] [] \OT1/cmtt/m/n/10 *[] @param[] STRING_ARRAY[][] string[][] nameArray:
 [] the[] array[] of[] the[] name[] of[] the[] token[] class[]
  []
 
-
+[40]
 Overfull \hbox (7.91759pt too wide) in paragraph at lines 333--333
 [][] [] [] \OT1/cmtt/m/n/10 *[] @param[] UINT256_2DARRAY[0][] uint256[][] token
 IndexArray:[] the[] array[] of[] the[] token[] index[]
@@ -1140,13 +1131,13 @@ Overfull \hbox (2.66763pt too wide) in paragraph at lines 333--333
 rAddressArray:[] the[] array[] of[] the[] address[]
  []
 
-[42]
+
 Overfull \hbox (7.91759pt too wide) in paragraph at lines 333--333
 [][] [] [] \OT1/cmtt/m/n/10 *[] @param[] STRING_ARRAY[] string[][] memberNameAr
 ray:[] the[] array[] of[] the[] name[] of[] the[] member[]
  []
 
-
+[42]
 Overfull \hbox (13.16754pt too wide) in paragraph at lines 333--333
 [][] [] [] \OT1/cmtt/m/n/10 *[] @param[] UINT256_ARRAY[0][] uint256[][] pluginI
 ndexArray:[] the[] array[] of[] the[] plugins[] index[]
@@ -1352,13 +1343,13 @@ be[] executed[] in[] sandbox[] to[] check[] if[] the[] operation[]
 
 [48] [49]) [50] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B848CA6AD02FBE8EB9AA0DF8641007C5;7378.
+(rerunfilecheck)             Checksum: 2D9DA08F87B6BC1128308FA60D1D5AFD;7373.
  ) 
 Here is how much of TeX's memory you used:
- 23829 strings out of 477678
- 446925 string characters out of 5829469
- 743339 words of memory out of 5000000
- 41998 multiletter control sequences out of 15000+600000
+ 23837 strings out of 477678
+ 447131 string characters out of 5829469
+ 743526 words of memory out of 5000000
+ 42002 multiletter control sequences out of 15000+600000
  476098 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,8n,103p,1067b,712s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1379,10 +1370,10 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2022/te
 xmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (50 pages, 4397078 bytes).
+Output written on main.pdf (50 pages, 4396175 bytes).
 PDF statistics:
- 655 PDF objects out of 1000 (max. 8388607)
- 543 compressed objects within 6 object streams
- 163 named destinations out of 1000 (max. 500000)
+ 670 PDF objects out of 1000 (max. 8388607)
+ 558 compressed objects within 6 object streams
+ 167 named destinations out of 1000 (max. 500000)
  484 words of extra memory for PDF output out of 10000 (max. 10000000)
 
