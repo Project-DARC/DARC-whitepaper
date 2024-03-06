@@ -91,4 +91,50 @@ In a DARC protocol, operators have the ability to designate multiple addresses a
 
 Since emergency agents possess the highest level of comprehensive administrative authority, their role can be likened to that of both a court and a firefighter. Therefore, it is essential for all members of the DARC to have complete trust in these emergency agents. Additionally, specific conditions should be established for calling upon emergency agents to prevent them from taking untimely or inappropriate actions, which could lead to damage or losses within the DARC.
 
+\subsection{Compare DARC with Legal Corporate Entity}
+
+Based on these principles, in Table \ref{table:4}, we compare the concepts of DARC and traditional joint-stock companies one by one. Although many concepts and mechanisms cannot be directly matched, this table attempts to analogize the similarities between DARC and traditional joint-stock companies, facilitating an understanding of various aspects of the DARC protocol.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| c | c | c|} 
+    \hline
+    Concept & DARC & Legal Corporate Entity \\ [0.5ex] 
+    \hline\hline
+
+    Currency & \makecell{Native tokens of \\ EVM-compatible blockchain} & \makecell{Fiat currency \\ (U.S. dollar, Euro, etc.)} \\
+    \hline
+    Corporate Entity & \makecell{Compiled and deployed \\ DARC  virtual machine on \\  EVM-compatible blockchain} & \makecell{Registered corporations \\ under government office} \\
+    \hline
+    Shares & \makecell{DARC tokens \\ (with voting weight \(\ge\) 1 \\ and dividend weight \(\ge\) 1)} & Stock certificates \\
+    \hline
+    Shareholders & DARC token holders & Shareholders \\
+    \hline
+    Capital Structure & \makecell{DARC Tokens \\ (with different voting weights \\ and dividend weights)} & \makecell{Class A/B/C stocks, \\ preferred stocks } \\
+    \hline
+    Bonds & \makecell{DARC tokens \\ (mintable at a certain price, \\ burnable at another certain price)} & Bond certificates \\
+    \hline
+    By-laws & A set of plugins & By-law documents \\
+    \hline 
+    Board of directors & \makecell{DARC tokens (with limited supply) \\ and a set of plugins} & Board meetings and votings \\
+    \hline
+    \makecell{Operation and \\Management} & \makecell{Run By-law Script} & Sign documents \\
+    \hline
+    Employment & \makecell{Pay native tokens and DARC tokens,\\ adding hierarchical memberships} & \makecell{Sign employment contracts, \\ pay payrolls and options/RSUs} \\
+    \hline
+    Purchase & Run \texttt{PAY\_CASH()} & \makecell{Electrical funds transfer \\ (eChecks, wire transfers, etc.)} \\
+    \hline
+    Dividends & \makecell{Run \texttt{OFFER\_DIVIDENDS()}} & \makecell{Pay dividends quarterly or \\ yearly with payments} \\
+
+
+
+
+    \hline
+\end{tabular}
+\caption{A comparision between DARC and legal corporate entity}
+\label{table:4}
+\end{table}
+
+
+
 \end{document}
