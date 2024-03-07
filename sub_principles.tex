@@ -95,6 +95,8 @@ Since emergency agents possess the highest level of comprehensive administrative
 
 Based on these principles, in Table \ref{table:4}, we compare the concepts of DARC and traditional joint-stock companies one by one. Although many concepts and mechanisms cannot be directly matched, this table attempts to analogize the similarities between DARC and traditional joint-stock companies, facilitating an understanding of various aspects of the DARC protocol.
 
+Please note that due to DARC multi-token system, which can represent goods, different levels of equity, boards, committees, and other positions, and memberships can represent shareholders, special shareholders, employees, managers, and other operator roles and permissions, when using one or more levels of darc tokens or memberships to correspond to the characteristics and concepts of legal corporate entities, it is necessary to allow or prohibit operations based on the settings of the corresponding plugins. When a certain level of token or membership is endowed with a certain function or characteristic, and complete use of one or several plugins to specify the functions and rights of token holders and a certain level of membership, or to allow and prohibit operations, or to allow voting processes and scenarios, in such cases, these tokens and memberships can be used to represent these functions and characteristics.
+
 \begin{table}[h!]
 \centering
 \begin{tabular}{| c | c | c|} 
@@ -108,33 +110,81 @@ Based on these principles, in Table \ref{table:4}, we compare the concepts of DA
     \hline
     Shares & \makecell{DARC tokens \\ (with voting weight \(\ge\) 1 \\ and dividend weight \(\ge\) 1)} & Stock certificates \\
     \hline
-    Shareholders & DARC token holders & Shareholders \\
+    Shareholders & DARC token holder addresses & Shareholders \\
     \hline
-    Capital Structure & \makecell{DARC Tokens \\ (with different voting weights \\ and dividend weights)} & \makecell{Class A/B/C stocks, \\ preferred stocks } \\
+    Capital Structure & \makecell{DARC tokens \\ (with different voting weights \\ and dividend weights)} & \makecell{Class A/B/C stocks, \\ preferred stocks } \\
     \hline
     Bonds & \makecell{DARC tokens \\ (mintable at a certain price, \\ burnable at another certain price)} & Bond certificates \\
     \hline
     By-laws & A set of plugins & By-law documents \\
     \hline 
-    Board of directors & \makecell{DARC tokens (with limited supply) \\ and a set of plugins} & Board meetings and votings \\
+    Board of directors & \makecell{DARC token holder addresses \\ (with limited supply) \\ and a set of plugins} & Human committee members  \\
+    \hline
+    Executives & \makecell{Operator addresses \\ (with certain memberships) \\ and a set of plugins} & Human executives \\
+    \hline
+    Employees & \makecell{Operator addresses \\ (with certain memberships) \\ and a set of plugins} & Human employees \\
     \hline
     \makecell{Operation and \\Management} & \makecell{Run By-law Script} & Sign documents \\
     \hline
     Employment & \makecell{Pay native tokens and DARC tokens,\\ adding hierarchical memberships} & \makecell{Sign employment contracts, \\ pay payrolls and options/RSUs} \\
     \hline
-    Purchase & Run \texttt{PAY\_CASH()} & \makecell{Electrical funds transfer \\ (eChecks, wire transfers, etc.)} \\
+    Purchase & Run \texttt{PAY\_CASH()} operation & \makecell{Electrical funds transfer \\ (eChecks, wire transfers, etc.)} \\
     \hline
-    Dividends & \makecell{Run \texttt{OFFER\_DIVIDENDS()}} & \makecell{Pay dividends quarterly or \\ yearly with payments} \\
+    Dividends & \makecell{Run \texttt{OFFER\_DIVIDENDS()}} operation & \makecell{Pay dividends quarterly or \\ yearly with payments} \\
 
 
 
 
     \hline
 \end{tabular}
-\caption{A comparision between DARC and legal corporate entity}
+\caption{A comparison of the structures of DARC and a legal corporate entity}
 \label{table:4}
 \end{table}
 
+For daily operations and management, we also compare various concepts of DARC and legal corporate entities in Table \ref{table:5}.
 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{| c | c | c|} 
+        \hline
+        Concept & DARC & Legal Corporate Entity \\ [0.5ex] 
+        \hline\hline
+    
+        Currency & \makecell{Native tokens of \\ EVM-compatible blockchain} & \makecell{Fiat currency \\ (U.S. dollar, Euro, etc.)} \\
+        \hline
+        Corporate Entity & \makecell{Compiled and deployed \\ DARC  virtual machine on \\  EVM-compatible blockchain} & \makecell{Registered corporations \\ under government office} \\
+        \hline
+        Shares & \makecell{DARC tokens \\ (with voting weight \(\ge\) 1 \\ and dividend weight \(\ge\) 1)} & Stock certificates \\
+        \hline
+        Shareholders & DARC token holder addresses & Shareholders \\
+        \hline
+        Capital Structure & \makecell{DARC tokens \\ (with different voting weights \\ and dividend weights)} & \makecell{Class A/B/C stocks, \\ preferred stocks } \\
+        \hline
+        Bonds & \makecell{DARC tokens \\ (mintable at a certain price, \\ burnable at another certain price)} & Bond certificates \\
+        \hline
+        By-laws & A set of plugins & By-law documents \\
+        \hline 
+        Board of directors & \makecell{DARC token holder addresses \\ (with limited supply) \\ and a set of plugins} & Human committee members  \\
+        \hline
+        Executives & \makecell{Operator addresses \\ (with certain memberships) \\ and a set of plugins} & Human executives \\
+        \hline
+        Employees & \makecell{Operator addresses \\ (with certain memberships) \\ and a set of plugins} & Human employees \\
+        \hline
+        \makecell{Operation and \\Management} & \makecell{Run By-law Script} & Sign documents \\
+        \hline
+        Employment & \makecell{Pay native tokens and DARC tokens,\\ adding hierarchical memberships} & \makecell{Sign employment contracts, \\ pay payrolls and options/RSUs} \\
+        \hline
+        Purchase & Run \texttt{PAY\_CASH()} operation & \makecell{Electrical funds transfer \\ (eChecks, wire transfers, etc.)} \\
+        \hline
+        Dividends & \makecell{Run \texttt{OFFER\_DIVIDENDS()}} operation & \makecell{Pay dividends quarterly or \\ yearly with payments} \\
+    
+    
+    
+    
+        \hline
+    \end{tabular}
+    \caption{A comparision between DARC and legal corporate entity}
+    \label{table:5}
+    \end{table}
 
 \end{document}
