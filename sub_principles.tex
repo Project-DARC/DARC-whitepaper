@@ -20,7 +20,21 @@ For the DARC protocol, plugins need to adhere to the following principles:
 
 Each plugin consists of two crucial components: ``condition'' and ``decision''. The ``condition'' represents the triggering criteria that activate the plugin, while the ``decision'' specifies the actions to be taken when the condition is met. 
     
-    The ``condition'' of each plugin is programmable and configurable, allowing for flexibility. When an operation is executed or when the DARC's state aligns with the specified condition, the plugin responds by implementing the corresponding "decision".
+The ``condition'' of each plugin is programmable and configurable, composed by a serial of condition expressions and logical operators(AND, OR, NOT). When an operation is executed with the condition triggered, the plugin responds by implementing the corresponding ``decision''. Below is an example of a plugin, designed in pseudo code:
+
+\begin{spverbatim}
+
+if ( 
+    expressionA AND
+    (expressionB OR expressionC) AND
+    (NOT expressionD)
+   ):
+    decision = "approved"
+    level = 100
+
+\end{spverbatim}
+
+The plugin condition above is a composed with four conditions, expressionA, expressionB, expressionC, expressionD, and three logical operators, AND, OR, NOT. When the condition is triggered, the plugin will make a decision of ``approved'' with a level of 100. In this way, each plugin can be designed to approve or deny operations based on the conditions and decisions specified by the plugin, and works as a law in the DARC protocol if the condition is triggered.
 
 \subsubsection{Levels of Plugins}
 
@@ -43,7 +57,23 @@ In summary, any operations involving modifications to plugins must also receive 
 
 \subsection{Program and Operations}
 
-For each DARC program, it consists of a series of operations, where each operation includes an opcode, a set of parameters, and an operator address. When an operator requests the DARC to execute a program, several scenarios may arise:
+For each DARC program, it consists of a series of operations, where each operation includes an opcode, a set of parameters, and an operator address. Below is an example of a DARC program with four operations:
+
+\begin{spverbatim}
+
+// Notes: below is a DARC program with four operations
+operation1(param1, param2);
+operation2(param3);
+operation3();
+operation4(
+    [value1, value2, value3], 
+    [address1, address2, address3],
+    param4
+);
+
+\end{spverbatim}
+
+When an operator requests the DARC to execute a program, several scenarios may arise:
 
 1. If one or more operations within this program receive a rejection decision from the plugin system, the entire program will be denied execution. In such a scenario, even if some of the operations meet the requirements, the program as a whole will be unable to proceed. 
 
@@ -51,11 +81,40 @@ For each DARC program, it consists of a series of operations, where each operati
 
 3. If each operation within this program receives an ``approved'' decision from the plugin system, in this scenario, all operations within the program can be executed sequentially and directly.
 
+When the program is approved by the plugin system, the DARC will execute the program in the order in which the operations are listed. If the program is rejected by the plugin system, the DARC will not execute any of the operations within the program. The DARC may still throw exceptions if any runtime errors occur during the execution of the program. For example, if an operator attempts to transfer more tokens than it own, or disable a plugin with index larger than the total number of plugins, the DARC will throw an exception, reject the operation and the program, and revert the state of the DARC to the state before the program was executed.
+
 \subsection{Multi-level Token System}
 
 The DARC protocol features a multi-level token system, with each level of tokens having independent voting weights and dividend weights, where the minimum values for these weights can be set to 0. It's important to note that the voting weight and dividend weights for each level of tokens are immutable and cannot be altered. Users have the capability to initialize a new level and perform a range of operations, including minting, burning, transferring, and more for all tokens.
 
 By assigning voting weights and dividend weights to tokens at each level, imposing limitations on token quantities, and incorporating additional plugins to restrict and design various token-related operations, multi-level tokens can serve a multitude of purposes, including common stock, bonds, board votes, A/B shares, preferred stock, common commodities, Non-Fungible Tokens (NFTs), and more.
+
+Table \ref{table:6} is a simple example of a multi-level token system. In this example, the DARC protocol includes seven levels of tokens, each with different parameters and rules. The parameters include voting weight, dividend weight, and total supply. The rules include the conditions and decisions for minting, burning, transferring, and dividends. The table provides a comparison between the DARC protocol and a legal corporate entity, illustrating the similarities and differences between the two.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{| c | c | c| c |} 
+        \hline
+        Level & Token Name & Parameters & Rules \\ [0.5ex] 
+        \hline\hline
+    0 & Board Member & \makecell[l]{Voting weight: 1 \\ Dividend weight: 0 \\ Total supply: 5} & \makecell[l]{1. Minting needs to be approved by \\  more than 70\% voting power of Class A \\ and B tokens. \\ 2. Burning or transferring needs to be \\ approved by all board members. \\ 3. Plugin-related operations need to \\ be approved by all board members.} \\
+    \hline 
+    1 & Executive  & \makecell[l]{Voting weight: 1 \\ Dividend weight: 0 \\ Total supply: 10} & \makecell[l]{1. Minting, burning or transferring needs \\ to be  approved by all board members. } \\
+    \hline
+    2 & Class A Stock & \makecell[l]{Voting weight: 1 \\ Dividend weight: 1 \\ Total supply: 1000000} & \makecell[l]{1. Minting needs to be approved by \\ all board members. \\ 2. Burning needs to be approved by \\ all board members. \\ 3. Transferring needs to be approved \\ by all board members if the owner of \\ tokens has more than 10\% of the total supply. \\ 4. DARC pays 20\% of the total income to all \\ Class A and B Stock owners as dividends.} \\
+    \hline
+    3 & Class B Stock & \makecell[l]{Voting weight: 10 \\ Dividend weight: 1 \\ Total supply: 500000} & \makecell[l]{1. Minting needs to be approved by \\ all board members. \\ 2. Burning needs to be approved by \\ all board members.} \\
+    \hline
+    4 & Corporate Bond & \makecell[l]{Voting weight: 0 \\ Dividend weight: 0 \\ Total supply: 1000000} & \makecell[l]{1. Minting 1 bond costs 10000 wei \\  before 2030-01-01. \\ 2. Burning 1 bond returns 13000 wei \\ after 2035-01-01 \\ and before 2031-02-01. \\ 3. Transferring 1 bond costs 100 wei. \\ 4. Total supply should be less than 1000000.} \\
+    \hline 
+    5 & Product Token & \makecell[l]{Voting weight: 0 \\ Dividend weight: 0 \\ Total supply: unlimited} & \makecell[l]{1. Minting 1 product token costs 2000 wei. \\ 2. Burning and refund needs to be  \\ approved by any executive.} \\
+    \hline
+    6 - 1000 & NFT & \makecell[l]{Voting weight: 0 \\ Dividend weight: 0 \\ Total supply: 1\\(for each level)} & \makecell[l]{1. Minting costs 10000000 wei per token. \\ 2. Burning is not allowed. \\ 3. Transferring costs 2500000 wei. \\ 4. If minting quantity is not 1, \\ or the supply of the target level is not 0, \\ minting is not allowed.} \\
+    \hline
+    \end{tabular}
+    \caption{An example of a multi-level token system in the DARC protocol.}
+    \label{table:6}
+    \end{table}
 
 \subsection{Dividends}
 
@@ -99,38 +158,34 @@ Please note that due to DARC multi-token system, which can represent goods, diff
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{| c | c | c|} 
+\begin{tabular}{| l | l | l|} 
     \hline
     Concept & DARC & Legal Corporate Entity \\ [0.5ex] 
     \hline\hline
 
-    Currency & \makecell{Native tokens of \\ EVM-compatible blockchain} & \makecell{Fiat currency \\ (U.S. dollar, Euro, etc.)} \\
+    Currency & \makecell[l]{Native tokens of \\ EVM-compatible blockchain} & \makecell[l]{Fiat currency \\ (U.S. dollar, Euro, etc.)} \\
     \hline
-    Corporate Entity & \makecell{Compiled and deployed \\ DARC  virtual machine on \\  EVM-compatible blockchain} & \makecell{Registered corporations \\ under government office} \\
+    Corporate Entity & \makecell[l]{Compiled and deployed \\ DARC  virtual machine on \\  EVM-compatible blockchain} & \makecell[l]{Registered corporations \\ under government office} \\
     \hline
-    Shares & \makecell{DARC tokens \\ (with voting weight \(\ge\) 1 \\ and dividend weight \(\ge\) 1)} & Stock certificates \\
+    Shares & \makecell[l]{DARC tokens \\ (with voting weight \(\ge\) 1 \\ and dividend weight \(\ge\) 1)} & Stock certificates \\
     \hline
     Shareholders & DARC token holder addresses & Shareholders \\
     \hline
-    Capital Structure & \makecell{DARC tokens \\ (with different voting weights \\ and dividend weights)} & \makecell{Class A/B/C stocks, \\ preferred stocks } \\
+    Capital Structure & \makecell[l]{DARC tokens \\ (with different voting weights \\ and dividend weights)} & \makecell[l]{Class A/B/C stocks, \\ preferred stocks } \\
     \hline
-    Bonds & \makecell{DARC tokens \\ (mintable at a certain price, \\ burnable at another certain price)} & Bond certificates \\
+    Bonds & \makecell[l]{DARC tokens \\ (mintable at a certain price, \\ burnable at another certain price)} & Bond certificates \\
     \hline
     By-laws & A set of plugins & By-law documents \\
     \hline 
-    Board of directors & \makecell{DARC token holder addresses \\ (with limited supply) \\ and a set of plugins} & Human committee members  \\
+    Board of directors & \makecell[l]{DARC token holder addresses \\ (with limited supply) \\ and a set of plugins} & Human committee members  \\
     \hline
-    Executives & \makecell{Operator addresses \\ (with certain memberships) \\ and a set of plugins} & Human executives \\
+    Executives & \makecell[l]{Operator addresses \\ (with certain memberships) \\ and a set of plugins} & Human executives \\
     \hline
-    Employees & \makecell{Operator addresses \\ (with certain memberships) \\ and a set of plugins} & Human employees \\
+    Employees & \makecell[l]{Operator addresses \\ (with certain memberships) \\ and a set of plugins} & Human employees \\
     \hline
-    \makecell{Operation and \\Management} & \makecell{Run By-law Script} & Sign documents \\
+    \makecell[l]{Operation and \\Management} & \makecell[l]{Run By-law Script} & Sign documents \\
     \hline
-    Employment & \makecell{Pay native tokens and DARC tokens,\\ adding hierarchical memberships} & \makecell{Sign employment contracts, \\ pay payrolls and options/RSUs} \\
-    \hline
-    Purchase & Run \texttt{PAY\_CASH()} operation & \makecell{Electrical funds transfer \\ (eChecks, wire transfers, etc.)} \\
-    \hline
-    Dividends & \makecell{Run \texttt{OFFER\_DIVIDENDS()}} operation & \makecell{Pay dividends quarterly or \\ yearly with payments} \\
+
 
 
 
@@ -145,45 +200,37 @@ For daily operations and management, we also compare various concepts of DARC an
 
 \begin{table}[h!]
     \centering
-    \begin{tabular}{| c | c | c|} 
+    \begin{tabular}{| l | l| l|} 
         \hline
         Concept & DARC & Legal Corporate Entity \\ [0.5ex] 
         \hline\hline
+    By-laws & \makecell[l]{1. Design all the core plugins related to by-laws. \\ 2. Design and run a By-law Script program including:\\ 2.1 Add and enable all plugins to the DARC. \\ 2.2 Add emergency agents. \\ 2.3 Add profile information. } & Write and sign by-law documents \\
+    \hline
+    Issuing shares & \makecell[l]{Design and run a By-law Script program including: \\ 1. Initialize token classes and information. \\ 2. Mint common stock tokens to shareholders. \\ 3. Mint board member tokens to board member.} & \makecell[l]{Issue stock certificates} \\
+    \hline
+    Investment & \makecell[l]{1. Design and run a By-law Script program including: \\ 1.1 Mint common stock tokens to shareholders. \\ 1.2 Disable unnecessary previous stock-related plugins. \\ 1.3 Add and enable new agreement plugins. \\ 1.4 Pay certain amount of tokens. \\ 2. Vote and approve the program. \\ 3. Execute the approved program. } & \makecell[l]{Issue stock certificates} \\
     
-        Currency & \makecell{Native tokens of \\ EVM-compatible blockchain} & \makecell{Fiat currency \\ (U.S. dollar, Euro, etc.)} \\
-        \hline
-        Corporate Entity & \makecell{Compiled and deployed \\ DARC  virtual machine on \\  EVM-compatible blockchain} & \makecell{Registered corporations \\ under government office} \\
-        \hline
-        Shares & \makecell{DARC tokens \\ (with voting weight \(\ge\) 1 \\ and dividend weight \(\ge\) 1)} & Stock certificates \\
-        \hline
-        Shareholders & DARC token holder addresses & Shareholders \\
-        \hline
-        Capital Structure & \makecell{DARC tokens \\ (with different voting weights \\ and dividend weights)} & \makecell{Class A/B/C stocks, \\ preferred stocks } \\
-        \hline
-        Bonds & \makecell{DARC tokens \\ (mintable at a certain price, \\ burnable at another certain price)} & Bond certificates \\
-        \hline
-        By-laws & A set of plugins & By-law documents \\
-        \hline 
-        Board of directors & \makecell{DARC token holder addresses \\ (with limited supply) \\ and a set of plugins} & Human committee members  \\
-        \hline
-        Executives & \makecell{Operator addresses \\ (with certain memberships) \\ and a set of plugins} & Human executives \\
-        \hline
-        Employees & \makecell{Operator addresses \\ (with certain memberships) \\ and a set of plugins} & Human employees \\
-        \hline
-        \makecell{Operation and \\Management} & \makecell{Run By-law Script} & Sign documents \\
-        \hline
-        Employment & \makecell{Pay native tokens and DARC tokens,\\ adding hierarchical memberships} & \makecell{Sign employment contracts, \\ pay payrolls and options/RSUs} \\
-        \hline
-        Purchase & Run \texttt{PAY\_CASH()} operation & \makecell{Electrical funds transfer \\ (eChecks, wire transfers, etc.)} \\
-        \hline
-        Dividends & \makecell{Run \texttt{OFFER\_DIVIDENDS()}} operation & \makecell{Pay dividends quarterly or \\ yearly with payments} \\
-    
+    \hline
+    Employment & \makecell[l]{Design and run a By-law Script program including: \\ 1. Add a new membership level, if necessary.\\ 2. Add new plugins to allow operator with \\ certain membership to withdraw cash monthly. \\ 3. Add new plugins to allow operator with \\ certain membership to mint RSU tokens annually. \\ 4. Add new employees to the membership. \\ 5. Allow manager-level operator to dismiss employee\\(removing employee from membership level).   } & \makecell[l]{Sign employment contracts, \\ pay payrolls and options/RSUs} \\
+    \hline
+    Purchase & \makecell[l]{Design and run a By-law Script program including: \\ 1. Pay cash to certain address \\ (External owned account, another DARC, \\ or other smart contract). }  & \makecell[l]{Electrical funds transfer \\ (eChecks, wire transfers, etc.)} \\
+    \hline
+    Dividends & \makecell[l]{Design and run a By-law Script program including: \\ 1. Offer dividends. } & \makecell[l]{Pay dividends quarterly or \\ yearly with payments} \\
+    \hline 
+    Stock tranding & \makecell[l]{Design and run a By-law Script program including: \\ 1. Transfer tokens from one address to another. } & \makecell[l]{Stock trading privately, \\ or on stock exchanges \\ or over-the-counter (OTC) \\ markets} \\
+    \hline
+    Accept payments & \makecell[l]{Send or transfer native tokens to DARC, \\ or withdraw native tokens from other DARCs \\ or smart contracts.} & \makecell[l]{Accept payments from customers, \\ suppliers, and other parties} \\
+    \hline 
+    Governance & \makecell[l]{Design and run a By-law Script program including: \\ 1. Design voting rules and add to the DARC. \\ 2. Add plugins to define scenarios that voting are needed. \\ Do voting when program is pending and voting is needed. } & \makecell[l]{Board meetings, \\ shareholder meetings, \\ and other corporate governance} \\
+    \hline 
+    \makecell[l]{Dispute and \\ litigation} & \makecell[l]{1. Add and enable emergency agents. \\ 2. Call emergency agents to resolve disputes. \\ 3. Contact emergency agents,  provide necessary \\ information, and pay the fee. \\ 4. The emergency agent operator takes over \\ the  DARC management, resolve issues or restore states.} & \makecell[l]{Legal actions, \\ arbitration, and mediation} \\
+    \hline
     
     
     
         \hline
     \end{tabular}
-    \caption{A comparision between DARC and legal corporate entity}
+    \caption{A comparision of operation and management between DARC and legal corporate entity}
     \label{table:5}
     \end{table}
 
