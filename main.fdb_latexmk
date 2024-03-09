@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1709960300 "main.aux" "main.bbl" "main" 1709960300
+["bibtex main"] 1709960341 "main.aux" "main.bbl" "main" 1709960341
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
-  "main.aux" 1709960300 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.aux" 1709960341 11767 8ef3387299ef197ea41e7698242c2c2c "pdflatex"
   "sample.bib" 1702344845 2536 b909edd391eab0ea4d549388803ae2e7 ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1709960289 "/Users/xinranwang/Documents/GitHub/DARC-whitepaper/main.tex" "main.pdf" "main" 1709960289
-  "/Users/xinranwang/Documents/GitHub/DARC-whitepaper/main.tex" 1709960277 5477 b46bcab649f64e8771e4bfba0d5f463f ""
+["pdflatex"] 1709960331 "/Users/xinranwang/Documents/GitHub/DARC-whitepaper/main.tex" "main.pdf" "main" 1709960331
+  "/Users/xinranwang/Documents/GitHub/DARC-whitepaper/main.tex" 1709960330 5477 b46bcab649f64e8771e4bfba0d5f463f ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -205,10 +205,10 @@
   "finite_state_machine.drawio.large.png" 1701818390 806722 c6e087f773c7e62527a4cc9a6936d3f9 ""
   "judgement_plugin_levels_after_ops.drawio.png" 1701848445 1112803 de329ae469dfca4332069c81c7a77e2f ""
   "judgement_plugin_levels_before_ops.drawio.png" 1701818390 1185258 17faf7dc1456208e7469b99e8b307499 ""
-  "main.aux" 1709960289 12103 38af6a65bf7a027071364d8ef0aea949 "pdflatex"
-  "main.bbl" 1709960248 1754 15d60ee8a17f73e7da475ddbe86df056 "bibtex main"
-  "main.out" 1709960289 7646 898ad96376bbb2917ab4f413cd457b70 "pdflatex"
-  "main.tex" 1709960277 5477 b46bcab649f64e8771e4bfba0d5f463f ""
+  "main.aux" 1709960331 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.bbl" 0 -1 0 "bibtex main"
+  "main.out" 0 -1 0 "pdflatex"
+  "main.tex" 1709960330 5477 b46bcab649f64e8771e4bfba0d5f463f ""
   "plugin_condition_nodes.drawio.png" 1701818390 610845 e5ecafa8737457f99efa0a943570dbe9 ""
   "sub_appendix.tex" 1702948044 15634 2b379ffd94e62f60216f1aeb48b389b8 ""
   "sub_architecture.tex" 1702326413 19618 5807df06d68b40d113d17937b6ba8adc ""
@@ -219,7 +219,7 @@
   "sub_memberships.tex" 1702345001 4331 dea0a9d2e49f351570486d8edd7d5004 ""
   "sub_multi_token_system.tex" 1709627670 28622 dacb77b4c1931992738d4091823d0699 ""
   "sub_plugins.tex" 1702294454 10861 e041435dfd677a19934f8290cc695e15 ""
-  "sub_principles.tex" 1709957952 23473 b4e6dafb748abd26399349a31ba12d91 ""
+  "sub_principles.tex" 1709960330 23473 b4e6dafb748abd26399349a31ba12d91 ""
   "sub_upgradablity.tex" 1702332202 5405 62c5c223ae3bbfe2fd86d827868add19 ""
   "sub_voting.tex" 1702298300 12743 3b4bbdd362e9e7fe02169fc8a8029ed9 ""
   "upgradability.drawio.png" 1701818390 809610 9985f963b0963d7e2022111478570ed8 ""
