@@ -1,0 +1,50 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{Jen16}
+
+\bibitem[B{\etalchar{+}}]{buterin2013ethereum}
+Vitalik Buterin et~al.
+\newblock Ethereum white paper.
+
+\bibitem[etha]{ethersDocumentation}
+{D}ocumentation --- docs.ethers.org.
+\newblock \url{https://docs.ethers.org/v6/}.
+\newblock [Accessed 10-12-2023].
+
+\bibitem[ethb]{ethereumEIP170Contract}
+{E}{I}{P}-170: {C}ontract code size limit --- eips.ethereum.org.
+\newblock \url{https://eips.ethereum.org/EIPS/eip-170}.
+\newblock [Accessed 11-12-2023].
+
+\bibitem[ethc]{ethereumERC1967Proxy}
+{E}{R}{C}-1967: {P}roxy {S}torage {S}lots --- eips.ethereum.org.
+\newblock \url{https://eips.ethereum.org/EIPS/eip-1967}.
+\newblock [Accessed 11-12-2023].
+
+\bibitem[git]{githubGitHubBabelbabel}
+{G}it{H}ub - babel/babel: {B}abel is a compiler for writing next generation
+  {J}ava{S}cript. --- github.com.
+\newblock \url{https://github.com/babel/babel}.
+\newblock [Accessed 10-12-2023].
+
+\bibitem[Jen16]{jentzsch2016decentralized}
+Christoph Jentzsch.
+\newblock Decentralized autonomous organization to automate governance.
+\newblock {\em White paper, November}, 2016.
+
+\bibitem[Ope]{proxy}
+``Proxy Upgrade Pattern'', OpenZeppelin Docs,
+  https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies.
+
+\bibitem[sol]{soliditylangSolidityx2014}
+{S}olidity {S}olidity 0.8.23 documentation --- docs.soliditylang.org.
+\newblock \url{https://docs.soliditylang.org/en/v0.8.23/}.
+\newblock [Accessed 10-12-2023].
+
+\bibitem[WE]{ethereumERC721NonFungible}
+Jacob Evans Nastassia~Sachs William~Entriken, Dieter~Shirley.
+\newblock {E}{R}{C}-721: {N}on-{F}ungible {T}oken {S}tandard ---
+  eips.ethereum.org.
+\newblock \url{https://eips.ethereum.org/EIPS/eip-721}.
+\newblock [Accessed 11-12-2023].
+
+\end{thebibliography}
